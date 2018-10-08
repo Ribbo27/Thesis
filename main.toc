@@ -1,0 +1,43 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{\numberline {1}Tecnologie utilizzate}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Laravel}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}ORM: Object-Relational Mapping}{4}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Model}{4}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Route}{4}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Controller}{4}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.5}Database}{4}{subsection.1.1.5}
+\contentsline {section}{\numberline {1.2}Composer}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Artisan}{5}{section.1.3}
+\contentsline {chapter}{\numberline {2}Progettazione}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Schema Relazionale}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Entit\IeC {\`a}}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Associazioni}{11}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}API}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Documentazione API}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Risorse}{12}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Endpoints}{14}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}GET /notes}{14}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}GET /notes/\{id\}}{16}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}GET /files/\{id\}}{17}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}POST /texts}{18}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}GET /texts/\{id\}}{19}{subsection.2.2.8}
+\contentsline {subsection}{\numberline {2.2.9}POST /photos}{20}{subsection.2.2.9}
+\contentsline {subsection}{\numberline {2.2.10}GET /photos/\{id\}}{21}{subsection.2.2.10}
+\contentsline {subsection}{\numberline {2.2.11}POST /audios}{22}{subsection.2.2.11}
+\contentsline {subsection}{\numberline {2.2.12}GET /audios/\{id\}}{23}{subsection.2.2.12}
+\contentsline {subsection}{\numberline {2.2.13}POST /videos}{24}{subsection.2.2.13}
+\contentsline {subsection}{\numberline {2.2.14}GET /videos/\{id\}}{25}{subsection.2.2.14}
+\contentsline {chapter}{\numberline {3}Implementazione}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Database}{27}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Codifica dei dati}{27}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Routing}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Routes}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Controllers}{28}{subsection.3.2.2}
+\contentsline {subsubsection}{Query}{28}{section*.3}
+\contentsline {subsubsection}{Query string}{28}{section*.4}
+\contentsline {chapter}{\numberline {4}Risultati ottenuti e conclusioni}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Risultati ottenuti}{31}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Ricezione dei dati}{31}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Invio dei dati}{31}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Conclusioni}{32}{section.4.2}

@@ -1,0 +1,44 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[square,numbers]{natbib}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage[italian]{babel}
+\usepackage{tikz}
+\usepackage{pdfpages}
+\usetikzlibrary{arrows}
+\usetikzlibrary{backgrounds}
+\bibliographystyle{unsrtnat}
+\usepackage{booktabs}
+\usepackage[normalem]{ulem}
+\usepackage{listings}
+%\usepackage{csquotes}
+%\useunder{\uline}{\ul}{}
+
+\begin{document}
+	
+	\includepdf{/Users/Ribbo/Desktop/Laurea/Tesi/frontespizioTesi.pdf}
+	
+	\tableofcontents
+	
+	\frontmatter
+	
+	\mainmatter
+	
+	\include{./TeX_files/introduction}
+	\include{./TeX_files/framework}
+	\include{./TeX_files/urbanStoriesSharing}
+	\include{./TeX_files/implementazione}
+	\include{./TeX_files/conclusioni}
+	
+	\backmatter
+	% bibliography, glossary and index would go here.
+	
+\end{document}

@@ -1,0 +1,856 @@
+\chapter{Progettazione}
+
+In questo capitolo verrà analizzata la parte progettuale del lavoro svolto focalizzandosi sui due pilastri principali, quali lo schema relazionale nella sezione 2.1 e le API nella sezione 2.2.
+
+\section{Schema Relazionale}
+\subsection{Entità}
+Nella progettazione del repository centralizzato, per prima cosa, sono state definite le entità. Un'entità rappresenta una classe di oggetti che hanno proprietà comuni ed esistenza autonoma. Un'occorrenza di queste è una istanza della classe rappresentata dall'entità, dunque l'oggetto stesso. In uno schema, ogni entità ha un nome che la identifica univocamente, e viene rappresentata graficamente tramite un rettangolo con il nome dell'entità al suo interno.
+Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo del nostro progetto e i loro relativi attributi:
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{schemaER.png}
+	\caption{schema relazionale}
+\end{figure}
+
+\pagebreak
+
+\begin{itemize}
+	\item \textbf{Photos}
+	
+		L'entità Photos rappresenta, appunto, le foto che vengono memorizzate e richieste nel database. Gli attributi associati sono:
+		
+		\begin{itemize}
+			\item \textbf{id} identificatore numerico univoco.
+			\item \textbf{width} rappresenta la larghezza delle foto.
+			\item \textbf{height} rappresenta l'altezza delle foto.
+		\end{itemize}
+	
+	\item \textbf{Audios}
+	
+		La tabella Audios rappresenta tutti i file di tipo audio. 
+		
+		Attributi:
+		
+		\begin{itemize}
+			\item \textbf{id} identificatore numerico univoco.
+			\item \textbf{duration} rappresenta la durata in secondi.
+			\item \textbf{bit\_rate} rappresenta la qualità audio del file caricato.
+		\end{itemize}
+		
+	\item \textbf{Videos}
+	
+		L'entità Videos rappresenta i file video della base di dati.
+		Attributi:
+		
+		\begin{itemize}
+			\item \textbf{id} identificatore numerico univoco.
+			\item \textbf{duration} rappresenta la durata in secondi.
+			\item \textbf{width} rappresenta la larghezza delle foto.
+			\item \textbf{height} rappresenta l'altezza delle foto.
+			\item \textbf{bit\_rate} rappresenta la qualità audio del file caricato.
+			\item \textbf{frame\_rate} rappresenta la qualità video del file.
+		\end{itemize}
+	
+	\item \textbf{Files}
+		
+		L'entità Files rappresenta una generalizzazione delle precedenti 3 entità. Gli attributi associati a questa tabella sono quindi tutti quei campi che hanno in comune i file multimediali(foto, audio e video):
+		\begin{itemize}
+			\item \textbf{id} ovvero un identificatore numerico univoco.
+			\item \textbf{size} il quale indica la dimensione del file in byte.
+			\item \textbf{format} questo campo indica il formato del file che si vuole caricare o recuperare dal database.
+			\item \textbf{path} identifica l'indirizzo in cui viene memorizzato, localmente sul database, il file in questione.
+			\item \textbf{created\_at} questo attributo definisce il giorno e l'ora di creazione del file.
+			\item \textbf{note\_id} questa è la \textbf{chiave esterna} che associa l'entità \textbf{Files} e l'entità \textbf{Note}  
+		\end{itemize}
+	Infine ci sono gli ultimi tre attributi, chiavi esterne, \textbf{photo\_id, audio\_id e video\_id }, che contengono l'informazione sul tipo di file, ovvero se sono foto, audio o video, mettendo quindi in relazione la tabella files con la corrispondente tabella. Ovviamente queste tre chiavi posso assumere il valore \textbf{null} poichè, ad esempio, un file non può essere contemporaneamente una foto e un video, o un audio e una foto. 
+
+	\item \textbf{Notes}
+	
+		La tabella Notes rappresenta le storie condivise dagli utenti con il sistema. Una nota può contenere più tipi di file.
+		
+		Attributi: 
+		\begin{itemize}
+			\item \textbf{id} identificatore numerico univoco.
+			\item \textbf{location\_id} chiave esterna che mettere in relazione l'entità Notes con l'entità Locations.
+		\end{itemize}
+		
+	
+	\item \textbf{Texts}
+	
+		Questa entità rappresenta le note di tipo testo condivise dagli utenti. 
+		
+		Attributi:
+		\begin{itemize}
+		\item \textbf{id} identificatore numerico univoco.
+		\item \textbf{char\_number} numero di caratteri della nota testuale.
+		\item \textbf{content} contenuto della nota testo.
+		\item \textbf{note\_id} chiave esterna che mette in relazione questa tabella con la tabella Notes.
+		\end{itemize}
+		
+	\item \textbf{Locations}
+	
+		Infine, la tabella Locations rappresenta la geolocalizzazione delle note, infatti, questa, è associata alla tabella Notes.
+		
+		Attributi:
+		\begin{itemize}
+			\item \textbf{id} identificatore numerico univoco.
+			\item \textbf{latitude} rappresenta la latitudine.
+			\item \textbf{longitude} rappresenta la longitudine.
+		\end{itemize}
+	
+\end{itemize}
+
+\subsection{Associazioni}
+
+Le associazioni rappresentano un legame concettuali tra una, due o più entità. In particolare, le associazioni, risultano necessarie per la corretta costruzione e implementazione di un database. In particolare esistono tre tipi di associazioni, \textbf{uno a uno, uno a molti e molti a molti}.
+
+Di seguito verranno illustrate le associazioni che compongono lo schema relazionale di questo progetto.
+
+\begin{itemize}
+	\item \textbf{Files -$>$ Photos, Audios, Videos}
+	
+	La relazione che lega l'entità Files alle entità Photos, Audios e Videos è una associazione di tipo \textbf{uno a uno}. Questo perchè concettualmente un file può essere di un solo tipo per volta. Una foto non può essere al contempo un audio o un video.
+	
+	\item \textbf{Notes -$>$ Files}
+	
+	La relazione che lega queste due tabelle è di tipo \textbf{uno a molti} poichè una nota può contenere più files di diverso tipo.
+	
+	\item \textbf{Notes -$>$ Texts}
+	
+	Una nota può avere solamente una nota testuale, quindi in questo caso si tratta di associazione \textbf{uno a uno}.
+	
+	\item \textbf{Locations -$>$ Notes}
+	
+	In questo caso, può succedere che in uno stesso luogo, utenti diversi, condividano delle note, di conseguenza l'associazione che lega queste tabelle è di tipo \textbf{uno a molti}. 
+\end{itemize}
+
+
+\section{API}
+
+Dopo aver definito la struttura del database, sono state definite le API (\textbf{Application Programming Interface}). Un'API consente a due sistemi di comunicare tra loro. Le API, sostanzialmente, fungono da traduttore per due o più sistemi che interagiscono. Solitamente, ogni API ha documentazione e specifiche che determinano il modo in cui le informazioni possono essere trasferite.
+Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'applicazione Web o un server web. Le API sono generalmente classificate come SOAP o REST ed entrambe sono utilizzate per accedere ai servizi Web. In questo progetto sono state definite delle API di tipo REST, che utilizzano gli URL per ricevere o inviare informazioni. REST utilizza quattro diversi verbi HTTP (GET, POST, PUT e DELETE) per eseguire attività.
+
+\subsection{Documentazione API}
+
+
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		METODO & ENDPOINT          & FUNZIONALITA’                   \\ \midrule
+		Get    & /notes            & Lista di oggetti Note           \\
+		Get    & /notes/\{id\}     & Recuperare una nota specifica    \\
+		Get    & /files/\{id\}     & Recuperare un file specifico     \\
+		Get    & /texts/\{id\}     & Recuperare una specifica nota testuale  \\
+		Post   & /texts            & Salvare una nuova nota testuale \\
+		Get    & /photos/\{id\}    & Recuperare una specifica foto   \\
+		Post   & /photos           & Salvare una nuova foto          \\
+		Get    & /audios/\{id\}    & Recuperare uno specifico file audio \\
+		Post   & /audios           & Salvare un nuovo file audio               \\
+		Get    & /videos/\{id\}    & Recuperare un nuovo file video      \\
+		Post   & /videos           & Salvare un nuovo video               \\ \bottomrule
+	\end{tabular}
+\caption{Rappresentazione tabellare degli \textbf{Endpoints} definiti}\label{etichetta}
+\end{table}
+
+\subsection{Risorse}
+
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\multicolumn{3}{c}{{ \textbf{NOTE}}}                           \\ \midrule
+		\textbf{PARAMETRO} & \textbf{TIPO} & \textbf{DESCRIZIONE}      \\ \midrule
+		id                 & int           & Identificatore della nota \\ 
+		location           & int           & Chiave Esterna            \\ \bottomrule
+	\end{tabular}
+\caption{Descrizione risorsa \textbf{Note}}\label{etichetta}
+\end{table}
+
+\ \linebreak
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\multicolumn{3}{c}{\textbf{LOCATION}}                         \\ \midrule
+		\textbf{PARAMETRO}&\textbf{TIPO}&\textbf{DESCRIZIONE}         \\ \midrule
+		id        & int     & Indentificatore della geolocalizzazione \\ 
+		latitude  & decimal & Rappresentazione della latitudine       \\ 
+		longitude & decimal & Rappresentazione della longitudine      \\ \bottomrule
+	\end{tabular}
+\caption{Descrizione risorsa \textbf{Location}}\label{etichetta}
+\end{table}
+
+\ \linebreak
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\multicolumn{3}{c}{\textbf{FILE}}                                                                                     \\ \midrule
+		\textbf{PARAMETRO} & \textbf{TIPO} & \textbf{DESCRIZIONE} \\ \midrule
+		id                                     & int                               & Identificatore del file                  \\ 
+		size                                   & float                             & Dimensione                               \\
+		format                                 & char                              & Formato                                  \\
+		path                                   & mediumtext                        & Percorso di salvataggio                  \\
+		created\_at                            & datetime                          & Data e ora di creazione                  \\
+		note\_id                               & int                               & Relazione con tabella Notes               \\
+		photo\_id                              & int                               & Relazione con tabella Photos              \\
+		audio\_id                              & int                               & Relazione con tabella Audios              \\
+		video\_id                              & int                               & Relazione con tabella Videos              \\ \bottomrule
+	\end{tabular}
+\caption{Descrizione risorsa \textbf{File}}\label{etichetta}
+\end{table}
+
+\ \linebreak
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\multicolumn{3}{c}{\textbf{TEXT}}                                    \\ \midrule
+		\textbf{PARAMETRO} & \textbf{TIPO} & \textbf{DESCRIZIONE}            \\
+		id                 & int           & Identificatore della nota testo \\
+		content            & mediumtext    & Contenuto del testo             \\
+		char\_number       & int           & Numero di caratteri             \\
+		note\_id           & int           & Relazione con tabella Notes      \\ \bottomrule
+	\end{tabular}
+\caption{Descrizione risorsa \textbf{Text}}\label{etichetta}
+\end{table}
+
+\ \linebreak
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\multicolumn{3}{c}{\textbf{PHOTO}}                             \\ \midrule
+		\textbf{PARAMETRO} & \textbf{TIPO} & \textbf{DESCRIZIONE}      \\
+		id                 & int           & Identificatore della foto \\
+		width              & int           & Larghezza della foto      \\
+		height             & int           & Altezza della foto        \\ \bottomrule
+	\end{tabular}
+\caption{Descrizione risorsa \textbf{Photo}}\label{etichetta}
+\end{table}
+
+\ \linebreak
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\multicolumn{3}{c}{\textbf{AUDIO}}                                 \\ \midrule
+		\textbf{PARAMETRO} & \textbf{TIPO} & \textbf{DESCRIZIONE}          \\
+		id                 & int           & Identificatore del file audio \\
+		duration           & int           & Durata dell'audio             \\
+		bit\_rate          & int           & Qualità dell'audio            \\ \bottomrule
+	\end{tabular}
+\caption{Descrizione risorsa \textbf{Audio}}\label{etichetta}
+\end{table}
+
+\ \linebreak
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\multicolumn{3}{c}{\textbf{VIDEO}}                                 \\ \midrule
+		\textbf{PARAMETRO} & \textbf{TIPO} & \textbf{DESCRIZIONE}          \\
+		id                 & int           & Identificatore del file video \\
+		duration           & int           & Durata del video              \\
+		width              & int           & Larghezza del video           \\
+		height             & int           & Altezza del video             \\
+		bit\_rate          & int           & Qualità dell'audio            \\
+		frame\_rate        & int           & Qualità del video             \\ \bottomrule
+	\end{tabular}
+\caption{Descrizione risorsa \textbf{Video}}\label{etichetta}
+\end{table}
+
+
+
+\subsection{Endpoints}
+
+\ \linebreak
+\subsection{GET /notes}
+\ \linebreak
+Questo endpoint permette di accedere ai dati del database restituendo tutte le note caricate dagli utenti. Questo endpoint è accessibile solo con una richiesta GET.
+Inoltre, questo endpoint prevede la possibilità di passare dei parametri in query string.
+
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                                                                                         \\ \midrule
+		lat                & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Latitudine associata alla posizione \\ dell'utente a partire dalla quale \\ si vogliono cercare le note\end{tabular}                     \\ 
+		long               & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Longitudine associata alla posizione \\ dell'utente a partire dalla quale \\ si vogliono cercare le note\end{tabular}               \\
+		max\_distance      & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Distanza massima entro il \\ quale si vogliono cercare le note rispetto \\ alla posizione dell'utente\end{tabular}
+	\end{tabular}
+\end{table}
+
+Struttura del JSON restituito:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		notes              & array di oggetti Note \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+
+Esempio di chiamata:
+\begin{lstlisting}
+
+/notes
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON restituito:
+\begin{lstlisting}
+[
+	{
+		"id": 1,
+		"location_id": 1,
+		"created_at": "2018-10-04 07:18:01"
+	},
+	{
+		"id": 2,
+		"location_id": 2,
+		"created_at": "2018-10-04 07:20:10"
+	},
+]
+
+
+\end{lstlisting}
+
+Esempio di chiamata con query string:
+\begin{lstlisting}
+
+/notes?lat=12.45&long=13.45&max_distance=1
+
+\end{lstlisting}
+
+Esempio JSON restituito:
+\begin{lstlisting}
+{
+	"id": 4,
+	"location_id": 4,
+	"created_at": "2018-10-04 07:21:50",
+	"location": {
+		"id": 4,
+		"latitude": "12.45",
+		"longitude": "13.45"
+	}
+},
+{
+	"id": 5,
+	"location_id": 5,
+	"created_at": "2018-10-04 07:23:00",
+	"location": {
+		"id": 5,
+		"latitude": "12.45",
+		"longitude": "13.45"
+	}
+}
+
+\end{lstlisting}
+
+
+\subsection{GET /notes/\{id\}}
+\ \linebreak
+Questo endpoint permette di accedere ai dati del database restituendo la nota specificata tramite parametro. Questo endpoint è accessibile solo con una richiesta GET.
+
+
+\begin{table}[!h]
+\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
+		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}Identifica la nota a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+Struttura del JSON restituito:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		note              & oggetto di tipo Note \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+
+Esempio di chiamata:
+\begin{lstlisting}
+
+/notes/1
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON restituito:
+\begin{lstlisting}
+{
+	"id": 1,
+	"location_id": 1,
+	"created_at": "2018-10-04 07:18:01"
+}
+\end{lstlisting}
+
+\subsection{GET /files/\{id\}}
+\ \linebreak
+Questo endpoint permette di accedere ad uno specifico file passando come parametro l'id. Questo endpoint è accessibile solo con una richiesta \textbf{GET}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
+		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica il file a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+
+\pagebreak
+
+Struttura del JSON restituito:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		file              & oggetto di tipo File \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+
+Esempio di chiamata:
+\begin{lstlisting}
+
+/files/1
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON restituito:
+\begin{lstlisting}
+{
+	"id": 1,
+	"size": 12345,
+	"format": "mp3",
+	"path": "audios/audio-1538637710.mp3",
+	"note_id": 4,
+	"photo_id": null,
+	"audio_id": 1,
+	"video_id": null,
+	"created_at": "2018-10-04 07:21:50"
+}
+\end{lstlisting}
+
+\subsection{POST /texts}
+\ \linebreak
+Questo endpoint permette di accedere a tutte le note testuali all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} se si vogliono salvare i dati sul database.\\
+
+Struttura del JSON da inviare con una richiesta POST:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		content            & testo\\ 
+		latitude           & numerico\\ 
+		longitude          & numerico\\ \bottomrule		
+	\end{tabular}
+\end{table}
+
+Esempio di \textbf{POST}:
+\begin{lstlisting}
+
+/texts	
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON da inviare:
+\begin{lstlisting}
+{
+	"content": "lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et d",
+	"latitude": 14.6543,
+	"longitude": 21.65432
+}
+\end{lstlisting}
+
+\subsection{GET /texts/\{id\}}
+Questo endpoint permette di accedere ad una specifica nota testuale. Questo endpoint è accessibile solo con una richiesta \textbf{GET}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
+		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica la nota testuale a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+
+\pagebreak
+
+Struttura del JSON restituito:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		text              & oggetto di tipo Text \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+
+Esempio di chiamata:
+\begin{lstlisting}
+
+/texts/4
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON restituito:
+\begin{lstlisting}
+{
+	"id": 4,
+	"content": "Testo Di prova TEST RESPONSE",
+	"char_number": 28,
+	"note_id": 7
+}
+\end{lstlisting}
+
+\subsection{POST /photos}
+\ \linebreak
+Questo endpoint permette di accedere a tutte le foto all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} se si vogliono salvare i dati sul database.\\
+
+Struttura del JSON da inviare con una richiesta POST:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		size               & numerico\\ 
+		format             & alfanumerico\\
+		width              & numerico\\
+		height             & numerico\\
+		image\_data        & alfanumerico\\
+		latitude           & numerico\\ 
+		longitude          & numerico\\ \bottomrule		
+	\end{tabular}
+\end{table}
+
+Esempio di richiesta \textbf{POST}:
+\begin{lstlisting}
+
+/photos	
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON da inviare:
+\begin{lstlisting}
+{
+	"size" : 4321,
+	"format" : "png",
+	"width" : 1024,
+	"heigth" : 817,
+	"image-data" : "iVBORw0KGgoAABBJRU5ErkJggg==",     
+	"latitude" : 45.5225169,
+	"longitude" : 9.2142299
+
+}
+\end{lstlisting}
+
+\subsection{GET /photos/\{id\}}
+Questo endpoint permette di accedere ad una specifica foto presente nel database. Questo endpoint è accessibile solo con una richiesta \textbf{GET}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
+		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica la foto a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+
+\pagebreak
+
+Struttura del JSON restituito:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		photo              & oggetto photo \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+
+Esempio di chiamata:
+\begin{lstlisting}
+
+/photos/4
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON restituito:
+\begin{lstlisting}
+{
+	"id": 4,
+	"width": 1920,
+	"height": 1080,
+	"image_data": "R0lGODlhPQBEAPeoAJosM//AwO/AwH+0pCZbEhAAOw==",
+	"file": {
+		"id": 4,
+		"size": 450,
+		"format": "gif",
+		"path": "photos/image-1538637823.gif",
+		"note_id": 6,
+		"photo_id": 1,
+		"audio_id": null,
+		"video_id": null,
+		"created_at": "2018-10-04 07:23:43"
+	}
+}
+\end{lstlisting}
+
+
+\subsection{POST /audios}
+\ \linebreak
+Questo endpoint permette di accedere a tutti i file audio all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} se si vogliono salvare i dati sul database.
+
+Struttura del JSON da inviare con una richiesta POST:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		size               & numerico\\ 
+		format             & alfanumerico\\
+		duration           & numerico\\
+		bit\_rate          & numerico\\
+		audio\_data        & alfanumerico\\
+		latitude           & numerico\\ 
+		longitude          & numerico\\ \bottomrule		
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+Esempio di richiesta \textbf{POST}:
+\begin{lstlisting}
+
+/audios	
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio JSON da inviare:
+\begin{lstlisting}
+{
+	"size" : 4321,
+	"format" : "mp3",
+	"duration" : 120,
+	"bit_rate" : 12345,
+	"audio-data" : "SUQzAwAAA/zw3cGIAAgACAAIAAgACAAAA==",
+	"latitude" : 45.5225169,
+	"longitude" : 9.2142299
+}
+\end{lstlisting}
+
+\subsection{GET /audios/\{id\}}
+Questo endpoint permette di accedere ad uno specifico file audio presente nel database ed è accessibile solo con una richiesta \textbf{GET}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
+		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica il file audio \\ a cui si vuole accedere\end{tabular} \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+
+\pagebreak
+
+Struttura del \textbf{JSON} restituito:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		audio              & oggetto audio \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+
+Esempio di richiesta \textbf{GET}:
+\begin{lstlisting}
+
+/audios/6
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio \textbf{JSON} restituito:
+\begin{lstlisting}
+{
+	"id": 6,
+	"duration": 10,
+	"bit_rate": 4321,
+	"audio_data": "SUQzAwAAAAAAAP/7kkbEs3cGIAAgACAAIAAgACAAAA==",
+	"file": {
+		"id": 6,
+		"size": 12345,
+		"format": "mp3",
+		"path": "audios/audio-1538637710.mp3",
+		"note_id": 4,
+		"photo_id": null,
+		"audio_id": 1,
+		"video_id": null,
+		"created_at": "2018-10-04 07:21:50"
+	}
+}
+\end{lstlisting}
+
+\subsection{POST /videos}
+\ \linebreak
+Questo endpoint permette di accedere a tutti i file video all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} per salvare i dati sul database.
+
+Struttura del JSON da inviare con una richiesta POST:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		size               & numerico\\ 
+		format             & alfanumerico\\
+		duration           & numerico\\
+		width              & numerico\\
+		height             & numerico\\
+		bit\_rate          & numerico\\
+		frame\_rate        & numerico\\
+		video\_data        & alfanumerico\\
+		latitude           & numerico\\ 
+		longitude          & numerico\\ \bottomrule		
+	\end{tabular}
+\end{table}
+
+
+
+\ \linebreak
+Esempio di richiesta \textbf{POST}:
+\begin{lstlisting}
+
+/videos	
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio \textbf{JSON} da inviare:
+\begin{lstlisting}
+{
+	"size" : 4321,
+	"format" : "mkw",
+	"duration" : 120,
+	"width" : 1080,
+	"heigth" : 920,
+	"bit_rate" : 12345,
+	"frame_rate" : 54321,
+	"video_data" : "iVBORw0KGgrkJggg==",    
+	"latitude" : 45.5225169,
+	"longitude" : 9.2142299
+}
+\end{lstlisting}
+
+\subsection{GET /videos/\{id\}}
+Questo endpoint permette di accedere ad uno specifico file video presente nel database ed è accessibile solo con una richiesta \textbf{GET}.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}llll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
+		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica il file video \\ a cui si vuole accedere\end{tabular} \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+
+\pagebreak
+
+Struttura del \textbf{JSON} restituito:
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
+		video              & oggetto video \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\ \linebreak
+
+Esempio di richiesta \textbf{GET}:
+\begin{lstlisting}
+
+/videos/1
+
+\end{lstlisting}
+
+\ \linebreak
+
+Esempio \textbf{JSON} restituito:
+\begin{lstlisting}
+{
+	"id": 1,
+	"duration": 10,
+	"width": 1920,
+	"height": 1080,
+	"bit_rate": 4321,
+	"frame_rate": 1234
+	"video_data": "ANdFI/UORIffOCHGhRMSxOBv+VSBIAICgAAAKw",
+	"file": {
+		"id": 2,
+		"size": 12345,
+		"format": "mp4",
+		"path": "videos/video-1538637780.mp4",
+		"note_id": 5,
+		"photo_id": null,
+		"audio_id": null,
+		"video_id": 1,
+		"created_at": "2018-10-04 07:23:00"
+	}
+}
+\end{lstlisting}

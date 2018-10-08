@@ -1,0 +1,59 @@
+\chapter{Implementazione}
+
+In questo capitolo verrano esposte le scelte implementative del progetto.
+
+\section{Database}
+Inizialmente, per quanto concerne la creazione del modello relazione, si era pensato di predisporre una entità autonoma per ogni tipo di file multimediale da caricare sul database, ma questo tipo di soluzione risultava ridondante perchè diverse entità presentavano gli stessi attributi, per questo motivo si è deciso di cambiare approccio ed è risultato più appropriato l'utilizzo di un'entità genitore \textbf{files} contenente le informazioni comuni unitamente alle entità specializzanti per ogni tipo di file multimediale: \textbf{photos}, \textbf{audios} e \textbf{videos}. 
+
+\subsection{Codifica dei dati}
+La codifica dei dati è un punto critico del progetto, poichè una scelta implementativa non ottimale potrebbe appensantire molto la base di dati.
+Le due alternative erano l'upload tramite \textbf{multipart form-data} oppure tramite la \textbf{codifica in base64}.
+
+Dopo un'analisi delle ipotetiche dimensioni dei file salvate nel repository, si è scelto di riceve i dati codificati in \textbf{Base64}, poiché si presuppone che le note testuali, le immagini, i file audio e i file video caricati sul server siano di piccole dimensioni. Per questo motivo sono stati implementati dei controlli sulle dimensioni dei dati ricevuti in input, aggiungendo regole di validazione dei dati, che ne limitano la dimensione massima.
+
+\section{Routing}
+
+Questa sezione tratta dell'implementazione dello strato network del servizio web e, di conseguenza, l'implementazione delle routes e dei controllers che, insieme gestiscono l'instradamento dei pacchetti dati inviati e ricevuti. 
+
+\subsection{Routes}
+
+Le \textbf{routes}, permettono di gestire tutte le richieste HTTP inviate dal client; Si occupano di instradare le operazioni CRUD verso i controller adatti. Per definire una route, in Laravel, si utilizza la seguente sintassi: 
+\begin{lstlisting}
+Route::<tipoRichiesta>(/endpoint, nomeController@nomeMetodo);
+\end{lstlisting}
+Dove per \textbf{tipoRichiesta} si intende, appunto, il tipo di richiesta HTTP, quidni GET, POST, PUT e DELETE.
+ 
+\subsection{Controllers}
+Definite le routes, sono stati realizzati i vari controller. Per ogni tipologia di file caricabile è stato definito un controller che gestisce le varie operazioni di richiesta e salvataggio dati.
+Per ogni controller, quindi, sono stati definiti due metodi che gestiscono le richieste HTTP Get; un metodo \textit{\textbf{index}} che restituisce un array di tutti gli oggetti gestiti e un metodo \textit{\textbf{show}} che restituisce una specifica risorsa identificata dal parametro passato con la richiesta, infine, un metodo che si occupa delle richieste Post e quindi del salvataggio fisico e logico dei dati chiamato \textit{\textbf{store}}.
+ 
+\subsubsection{Query}
+Durante lo sviluppo dei controllers, è sorta la necessità di recuperare informazioni specifiche di alcuni file.
+Per questo motivo sono state implementate delle semplici \textbf{query}, ad esempio, per recuperare la codifica in base64 del file richiesto con una Get.
+
+\subsubsection{Query string}
+Un'altra necessità sorta durante questa fase di sviluppo è la gestione delle query string passate come parametri delle richieste HTTP.
+La richiesta principale è quella di reperire delle note in una certa posizione oppure entro una certa distanza da una posizione data.
+La logica alla base di questa operazione è quella di ottenere tutti i parametri passati in query string, ovvero le coordinate geografiche dell'utente e la distanza massima entro la quale si vogliono recuperare i dati; dopodichè, vengono ciclate tutte le note all'interno del repository e, sfruttando il teorema di Pitagora, vengono selezionate solo le note richieste.
+
+Di seguito l'estratto della funzione che seleziona le note entro un certo range:
+\begin{lstlisting}
+foreach ($notes as $key => $value) {
+
+	if($value->location != null) {
+		$lat2 = $value->location->latitude;
+		$long2 = $value->location->longitude;
+		$distance = sqrt(
+				pow($lat2-$lat1, 2) +
+			 	pow($long2-$long1, 2)
+			 	);
+
+		if($distance > $max_distance) {
+			$notes->forget($key);
+		}    
+	} else {
+		$notes->forget($key);
+	}
+}
+\end{lstlisting}
+

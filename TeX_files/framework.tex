@@ -1,0 +1,57 @@
+\chapter{Tecnologie utilizzate}
+
+Questo capitolo si concentrerà solo sulle funzionalità offerte dal framework utilizzate durante la realizzazione dei servizi web per la raccoltà dei dati.
+
+\section{Laravel}
+Laravel è un framework per lo sviluppo di applicazioni web che cerca di facilitare il processo di sviluppo, semplificando le attività ripetitive utilizzate nella maggior parte delle applicazioni Web di oggi.
+Dal momento che riesce a fare tutti i compiti essenziali che vanno dalla gestione del web e gestione del database alla generazione di codice HTML, Laravel è chiamato \textbf{full stack framework}. Questo ambiente di sviluppo web integrato è pensato per offrire un miglioramento nel flusso di lavoro dello sviluppatore.
+
+A differenza di altri ambienti di sviluppo, Laravel necessita solo di qualche modifica al codice di configurazione PHP ed è pronto per l'uso. Inoltre, l'utilizzo di pochi file di configurazione consente alle applicazioni web Laravel di avere un struttura del codice simile che le rende molto caratteristiche e facilmente identificabili. D'altro canto questo potrebbe essere visto come un vincolo su come lo sviluppatore intende organizzare la propria appliczione. Tuttavia, questi vincoli rendono molto più facile e veloce la creazione di applicazioni Web. Inoltre offre una macchina virtuale, \textbf{Laravel Homestead}, Vagrant pre-confezionata che fornisce un ambiente di sviluppo senza che sia necessario installare PHP, un server Web e qualsiasi altro software server sul computer locale. Le virtual machine di Vagrant sono completamente usa e getta quindi se qualcosa va storto, la si puo distruggere e ricreare in pochi minuti.
+
+In questo progetto le funzionalità utilizzate di Laravel sono l'Eloquent ORM, i model, le route, i controller e i database.
+
+\subsection{ORM: Object-Relational Mapping}
+L'ORM è una tecnica di programmazione che aiuta a convertire i dati tra sistemi incompatibili.
+A questo scopo, Laravel, fornisce \textbf{Eloquent ORM} che consente di lavorare con gli oggetti e le tabelle del database utilizzando una sintassi semplice ed intuitiva. Ogni tabella del database ha un \textbf{modello} corrispondente utilizzato per l'interazione con quella tabella. 
+
+\subsection{Model}
+Un Model è lo strumento con cui lo sviluppatore può manipolare i dati. Può essere considerato uno strato collocato tra i dati e l'applicazione.
+
+\subsection{Route}
+Le route permettono di definire gli instradamenti delle richieste HTTP. La loro funzione base è quella di definire come va gestita una certa richiesta HTTP. Avendo utilizzato in questo progetto delle classi Controller, le route si limiteranno a instradare le varie richieste verso l'opportuno controller.
+
+\subsection{Controller}
+Come anticipato nella sezione 1.1, Laravel semplifica molte operazioni. I controller fanno parte di queste semplificazioni permettendo di raggruppare ed organizzare tutta la logica di gestione delle richieste HTTP. I controller possono raggruppare la logica di gestione delle richieste correlate in una singola classe.
+
+\subsection{Database}
+L'interazione con i database offerta dal framework può essere strutturata in 3 parti:
+\begin{itemize}
+	\item \textbf{Eloquent ORM}
+	
+	L'ORM Eloquent fornito con Laravel include una semplice implementazione PHP ActiveRecord che consente allo sviluppatore di eseguire query di database con una sintassi PHP invece di scrivere codice SQL, i metodi vengono semplicemente concatenati. Ogni tabella nel database possiede un Modello corrispondente attraverso il quale lo sviluppatore interagisce con detta tabella.
+	
+	\item \textbf{Schema builder}
+	
+	La classe Laravel Schema fornisce un database in grado di funzionare con una moltitudine di DBMS per gestire tutto il lavoro relativo al database come la creazione o l'eliminazione di tabelle o l'aggiunta di campi a una tabella esistente. Funziona con una moltitudine di sistemi di database supportati da Laravel e MySQL.
+	
+	\item \textbf{Migrations}
+	
+	Le migrazioni possono essere considerate come un controllo di versione per il nostro database, infatti, consentono di modificare lo schema del database, descrivere e registrare tutte quelle modifiche specifiche in un file di migrazione. Ogni migrazione viene solitamente associata a un generatore di schemi per gestire il tutto senza sforzo. Una migrazione può anche essere ripristinata o riportata ad una versione precedente.
+	
+	\item \textbf{Seeders}
+	
+	La classe Seeder consente di inserire i dati nelle nostre tabelle. Questa funzione è molto utile poiché lo sviluppatore può inserire dati fittizzi nelle tabelle del database ogni volta che desidera testare l'applicazione web.
+	
+\end{itemize}
+
+\section{Composer}
+
+Un'altra caratteristica che distingue Laravel dagli altri framework è che è un framework Composer ready. In effetti, Laravel è esso stesso una miscela di diversi componenti Composer, ciò aggiunge un'interoperabilità al framework.
+Composer è uno strumento di gestione delle dipendenze per PHP. Essenzialmente, il ruolo principale di Composer nel framework di Laravel è quello di gestire la dipendenza delle dipendenze del nostro progetto. Ad esempio, se una delle librerie che stiamo utilizzando nel nostro progetto dipende da altre tre librerie che devono essere aggiornate, non è necessario trovare e aggiornare manualmente alcun file. È possibile aggiornare tutte e quattro le librerie tramite un singolo comando.
+Un altro vantaggio nell'utilizzo di Composer è che genera e gestisce un file di caricamento automatico, \textbf{autoload}, nella radice della directory \textbf{vendor/}, che conterrà tutte le dipendenze del progetto. In tal modo, dal lato dello sviluppatore non è necessario ricordare tutti i percorsi delle dipendenze e includere ciascuno di essi in ogni file del progetto, deve solo includere il file \textbf{autoload} fornito da Composer. 
+
+\section{Artisan}
+
+Uno sviluppatore dovrebbe solitamente interagire con il framework di Laravel usando un'utilità a riga di comando che crea e gestisce l'ambiente del progetto. Laravel ha uno strumento da riga di comando incorporato chiamato \textbf{Artisan}. Questo strumento ci consente di eseguire la maggior parte delle operazioni di programmazione ripetitive che la maggior parte degli sviluppatori evita di eseguire manualmente.
+Artisan può essere utilizzato per creare un codice scheletro, lo schema del database e le migrazioni associate che possono essere molto utili per gestire il sistema o ripararlo in caso di errori. Si possono creare anche i seeds di database che ci consentiranno di riempire con alcuni dati le tabelle. Può anche essere impiegato per generare subito i file di base dei modelli e dei controller tramite la riga di comando e gestire tali risorse e le rispettive configurazioni. 
+Artisan ci permette persino di creare dei comandi personalizzati, per poter eseguire qualsiasi operazione possa essere necessaria al nostro progetto.
