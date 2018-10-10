@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  10 OCT 2018 16:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  10 OCT 2018 16:46
 entering extended mode
 **./main.tex
 (main.tex
@@ -1366,32 +1366,32 @@ Underfull \vbox (badness 7433) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
-[24] [25] [26]) [27]
+[24] [25]) [26]
 \openout2 = `./TeX_files/implementazione.aux'.
 
- (TeX_files/implementazione.tex [28
-
-
-
-]
+ (TeX_files/implementazione.tex
 Capitolo 3.
-<Struttura_applicazione.png, id=597, 146.34676pt x 543.83176pt>
+<Struttura_applicazione.png, id=588, 146.34676pt x 543.83176pt>
 File: Struttura_applicazione.png Graphic file (type png)
 <use Struttura_applicazione.png>
 Package pdftex.def Info: Struttura_applicazione.png  used on input line 9.
 (pdftex.def)             Requested size: 125.47835pt x 236.6064pt.
-[29 <./Struttura_applicazione.png>]
-<AppDirectory.png, id=604, 110.814pt x 220.4235pt>
+[27
+
+
+
+ <./Struttura_applicazione.png>]
+<AppDirectory.png, id=596, 110.814pt x 220.4235pt>
 File: AppDirectory.png Graphic file (type png)
 <use AppDirectory.png>
 Package pdftex.def Info: AppDirectory.png  used on input line 20.
 (pdftex.def)             Requested size: 62.73514pt x 118.30377pt.
-<DatabaseDirectory.png, id=605, 92.14426pt x 69.861pt>
+<DatabaseDirectory.png, id=597, 92.14426pt x 69.861pt>
 File: DatabaseDirectory.png Graphic file (type png)
 <use DatabaseDirectory.png>
 Package pdftex.def Info: DatabaseDirectory.png  used on input line 31.
 (pdftex.def)             Requested size: 83.65173pt x 59.15718pt.
- [30 <./AppDirectory.png> <./DatabaseDirectory.png>]
+ [28 <./AppDirectory.png> <./DatabaseDirectory.png>]
 LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 46.
 
 ("C:\Users\Ribbo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\ts1zi4
@@ -1400,23 +1400,23 @@ File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
 (Font)              scaled to size 10.95pt on input line 46.
+ [29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-[34]) [35]
+[32]) [33]
 \openout2 = `./TeX_files/conclusioni.aux'.
 
- (TeX_files/conclusioni.tex [36
+ (TeX_files/conclusioni.tex [34
 
 
 
 ]
 Capitolo 4.
-[37]) [38]
+[35]) [36]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
  (main.aux (TeX_files/introduction.aux) (TeX_files/framework.aux)
@@ -1433,8 +1433,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 24251 strings out of 492973
- 436657 string characters out of 3126692
+ 24249 strings out of 492973
+ 436643 string characters out of 3126692
  802430 words of memory out of 3000000
  27285 multiletter control sequences out of 15000+200000
  13158 words of font info for 49 fonts, out of 3000000 for 9000
@@ -1453,9 +1453,9 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ribbo/AppData/Local/Programs/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ribbo/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Ribbo/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (42 pages, 484457 bytes).
+Output written on main.pdf (40 pages, 482975 bytes).
 PDF statistics:
- 848 PDF objects out of 1000 (max. 8388607)
- 379 named destinations out of 1000 (max. 500000)
+ 839 PDF objects out of 1000 (max. 8388607)
+ 377 named destinations out of 1000 (max. 500000)
  405 words of extra memory for PDF output out of 10000 (max. 10000000)
 
