@@ -263,14 +263,12 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 \end{table}
 
 
-
+\pagebreak
 \subsection{Endpoints}
 
-\ \linebreak
 \subsection{GET /notes}
-\ \linebreak
-Questo endpoint permette di accedere ai dati del database restituendo tutte le note caricate dagli utenti. Questo endpoint è accessibile solo con una richiesta GET.
-Inoltre, questo endpoint prevede la possibilità di passare dei parametri in query string.
+Questo endpoint permette di accedere ai dati del database restituendo tutte le note caricate dagli utenti. 
+Questo endpoint è accessibile solo con una richiesta GET; inoltre, prevede la possibilità di passare dei parametri in query string.
 
 
 \begin{table}[!h]
@@ -278,13 +276,13 @@ Inoltre, questo endpoint prevede la possibilità di passare dei parametri in que
 	\begin{tabular}{@{}llll@{}}
 		\toprule
 		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                                                                                         \\ \midrule
-		lat                & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Latitudine associata alla posizione \\ dell'utente a partire dalla quale \\ si vogliono cercare le note\end{tabular}                     \\ 
-		long               & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Longitudine associata alla posizione \\ dell'utente a partire dalla quale \\ si vogliono cercare le note\end{tabular}               \\
-		max\_distance      & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Distanza massima entro il \\ quale si vogliono cercare le note rispetto \\ alla posizione dell'utente\end{tabular}
+		lat                & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Latitudine associata alla posizione \\ dell'utente a partire dalla quale \\ si vogliono cercare le note.\end{tabular}                     \\ 
+		long               & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Longitudine associata alla posizione \\ dell'utente a partire dalla quale \\ si vogliono cercare le note.\end{tabular}               \\
+		max\_distance      & opzionale          & numerico        & \begin{tabular}[c]{@{}l@{}}Distanza massima entro il \\ quale si vogliono cercare le note \\ rispetto alla posizione dell'utente.\end{tabular} \\
+		type      		   & opzionale          & text, photo, audio, video& \begin{tabular}[c]{@{}l@{}}Specifica il tipo di note \\ da ricercare.\end{tabular} \\ \bottomrule
 	\end{tabular}
+\caption{Descrizione dei \textbf{parametri} in input}
 \end{table}
-
-Struttura del JSON restituito:
 
 \begin{table}[!h]
 	\centering
@@ -293,21 +291,15 @@ Struttura del JSON restituito:
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		notes              & array di oggetti Note \\ \bottomrule
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} restituito}
 \end{table}
 
-\ \linebreak
-
-Esempio di chiamata:
-\begin{lstlisting}
-
-/notes
-
+\pagebreak
+\begin{lstlisting}[caption = Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+	/notes
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio JSON restituito:
-\begin{lstlisting}
+\begin{lstlisting}[caption = Esempio \textbf{JSON} restituito]
 [
 	{
 		"id": 1,
@@ -324,15 +316,12 @@ Esempio JSON restituito:
 
 \end{lstlisting}
 
-Esempio di chiamata con query string:
-\begin{lstlisting}
-
-/notes?lat=12.45&long=13.45&max_distance=1
-
+\pagebreak
+\begin{lstlisting}[caption = Esempio di chiamata con \textbf{query string}, xleftmargin=.15\textwidth, xrightmargin=.15\textwidth]
+  /notes?lat=12.45&long=13.45&max_distance=1
 \end{lstlisting}
 
-Esempio JSON restituito:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
 {
 	"id": 4,
 	"location_id": 4,
@@ -358,7 +347,6 @@ Esempio JSON restituito:
 
 
 \subsection{GET /notes/\{id\}}
-\ \linebreak
 Questo endpoint permette di accedere ai dati del database restituendo la nota specificata tramite parametro. Questo endpoint è accessibile solo con una richiesta GET.
 
 
@@ -369,9 +357,10 @@ Questo endpoint permette di accedere ai dati del database restituendo la nota sp
 		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
 		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}Identifica la nota a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
 	\end{tabular}
+\caption{Descrizione dei \textbf{parametri} in input}
 \end{table}
 
-Struttura del JSON restituito:
+
 
 \begin{table}[!h]
 	\centering
@@ -380,21 +369,15 @@ Struttura del JSON restituito:
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		note              & oggetto di tipo Note \\ \bottomrule
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} restituito}
 \end{table}
 
-\ \linebreak
 
-Esempio di chiamata:
-\begin{lstlisting}
-
-/notes/1
-
+\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+	/notes/1
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio JSON restituito:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
 {
 	"id": 1,
 	"location_id": 1,
@@ -403,7 +386,6 @@ Esempio JSON restituito:
 \end{lstlisting}
 
 \subsection{GET /files/\{id\}}
-\ \linebreak
 Questo endpoint permette di accedere ad uno specifico file passando come parametro l'id. Questo endpoint è accessibile solo con una richiesta \textbf{GET}.
 
 \begin{table}[!h]
@@ -413,12 +395,8 @@ Questo endpoint permette di accedere ad uno specifico file passando come paramet
 		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
 		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica il file a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
 	\end{tabular}
+\caption{Descrizione dei \textbf{parametri} in input}
 \end{table}
-
-
-\pagebreak
-
-Struttura del JSON restituito:
 
 \begin{table}[!h]
 	\centering
@@ -427,21 +405,15 @@ Struttura del JSON restituito:
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		file              & oggetto di tipo File \\ \bottomrule
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} restituito}
 \end{table}
 
-\ \linebreak
 
-Esempio di chiamata:
-\begin{lstlisting}
-
-/files/1
-
+\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+	/files/1
 \end{lstlisting}
-
-\ \linebreak
-
-Esempio JSON restituito:
-\begin{lstlisting}
+\pagebreak
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
 {
 	"id": 1,
 	"size": 12345,
@@ -456,10 +428,7 @@ Esempio JSON restituito:
 \end{lstlisting}
 
 \subsection{POST /texts}
-\ \linebreak
-Questo endpoint permette di accedere a tutte le note testuali all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} se si vogliono salvare i dati sul database.\\
-
-Struttura del JSON da inviare con una richiesta POST:
+Questo endpoint permette di salvare note testuali all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}.\\
 
 \begin{table}[!h]
 	\centering
@@ -470,28 +439,23 @@ Struttura del JSON da inviare con una richiesta POST:
 		latitude           & numerico\\ 
 		longitude          & numerico\\ \bottomrule		
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} da inviare con una \textbf{POST}}
 \end{table}
 
-Esempio di \textbf{POST}:
-\begin{lstlisting}
-
-/texts	
-
+\begin{lstlisting}[caption=Esempio di \textbf{POST}, xleftmargin=.32\textwidth, xrightmargin=.32\textwidth]
+	/texts	
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio JSON da inviare:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
 {
-	"content": "lorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et d",
+	"content": "lorem ipsum, quia dolor sit",
 	"latitude": 14.6543,
 	"longitude": 21.65432
 }
 \end{lstlisting}
 
 \subsection{GET /texts/\{id\}}
-Questo endpoint permette di accedere ad una specifica nota testuale. Questo endpoint è accessibile solo con una richiesta \textbf{GET}.
+Questo endpoint permette di accedere ad una specifica nota testuale. E' accessibile solo con una richiesta \textbf{GET}.
 
 \begin{table}[!h]
 	\centering
@@ -500,12 +464,8 @@ Questo endpoint permette di accedere ad una specifica nota testuale. Questo endp
 		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
 		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica la nota testuale a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
 	\end{tabular}
+\caption{Descrizione dei \textbf{parametri} in input}
 \end{table}
-
-
-\pagebreak
-
-Struttura del JSON restituito:
 
 \begin{table}[!h]
 	\centering
@@ -514,21 +474,14 @@ Struttura del JSON restituito:
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		text              & oggetto di tipo Text \\ \bottomrule
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} restituito}
 \end{table}
 
-\ \linebreak
-
-Esempio di chiamata:
-\begin{lstlisting}
-
-/texts/4
-
+\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+	/texts/4
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio JSON restituito:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
 {
 	"id": 4,
 	"content": "Testo Di prova TEST RESPONSE",
@@ -537,11 +490,9 @@ Esempio JSON restituito:
 }
 \end{lstlisting}
 
+\pagebreak
 \subsection{POST /photos}
-\ \linebreak
-Questo endpoint permette di accedere a tutte le foto all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} se si vogliono salvare i dati sul database.\\
-
-Struttura del JSON da inviare con una richiesta POST:
+Questo endpoint permette di salvare delle foto all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}.\\
 
 \begin{table}[!h]
 	\centering
@@ -556,19 +507,14 @@ Struttura del JSON da inviare con una richiesta POST:
 		latitude           & numerico\\ 
 		longitude          & numerico\\ \bottomrule		
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} da inviare con una \textbf{POST}}
 \end{table}
 
-Esempio di richiesta \textbf{POST}:
-\begin{lstlisting}
-
-/photos	
-
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{POST}, xleftmargin=.26\textwidth, xrightmargin=.26\textwidth]
+	  /photos	
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio JSON da inviare:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
 {
 	"size" : 4321,
 	"format" : "png",
@@ -581,8 +527,9 @@ Esempio JSON da inviare:
 }
 \end{lstlisting}
 
+\pagebreak
 \subsection{GET /photos/\{id\}}
-Questo endpoint permette di accedere ad una specifica foto presente nel database. Questo endpoint è accessibile solo con una richiesta \textbf{GET}.
+Questo endpoint permette di accedere ad una specifica foto presente nel database. E' accessibile solo con una richiesta \textbf{GET}.
 
 \begin{table}[!h]
 	\centering
@@ -591,12 +538,8 @@ Questo endpoint permette di accedere ad una specifica foto presente nel database
 		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
 		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica la foto a cui\\ si vuole accedere\end{tabular} \\ \bottomrule
 	\end{tabular}
+\caption{Descrizione dei \textbf{parametri} in input}
 \end{table}
-
-
-\pagebreak
-
-Struttura del JSON restituito:
 
 \begin{table}[!h]
 	\centering
@@ -605,26 +548,19 @@ Struttura del JSON restituito:
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		photo              & oggetto photo \\ \bottomrule
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} restituito}
 \end{table}
 
-\ \linebreak
-
-Esempio di chiamata:
-\begin{lstlisting}
-
-/photos/4
-
+\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.30\textwidth, xrightmargin=.30\textwidth]
+	/photos/4
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio JSON restituito:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
 {
 	"id": 4,
 	"width": 1920,
 	"height": 1080,
-	"image_data": "R0lGODlhPQBEAPeoAJosM//AwO/AwH+0pCZbEhAAOw==",
+	"image_data": "R0lGODlhPQBEAPAwO/AwH+0pCZbEhAAOw==",
 	"file": {
 		"id": 4,
 		"size": 450,
@@ -641,10 +577,7 @@ Esempio JSON restituito:
 
 
 \subsection{POST /audios}
-\ \linebreak
-Questo endpoint permette di accedere a tutti i file audio all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} se si vogliono salvare i dati sul database.
-
-Struttura del JSON da inviare con una richiesta POST:
+Questo endpoint permette di salvare files audio all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}.
 
 \begin{table}[!h]
 	\centering
@@ -659,20 +592,14 @@ Struttura del JSON da inviare con una richiesta POST:
 		latitude           & numerico\\ 
 		longitude          & numerico\\ \bottomrule		
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} da inviare con una \textbf{POST}}
 \end{table}
 
-\ \linebreak
-Esempio di richiesta \textbf{POST}:
-\begin{lstlisting}
-
-/audios	
-
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{POST}, xleftmargin=.26\textwidth, xrightmargin=.26\textwidth]
+	  /audios	
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio JSON da inviare:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
 {
 	"size" : 4321,
 	"format" : "mp3",
@@ -684,6 +611,7 @@ Esempio JSON da inviare:
 }
 \end{lstlisting}
 
+\pagebreak
 \subsection{GET /audios/\{id\}}
 Questo endpoint permette di accedere ad uno specifico file audio presente nel database ed è accessibile solo con una richiesta \textbf{GET}.
 
@@ -694,12 +622,8 @@ Questo endpoint permette di accedere ad uno specifico file audio presente nel da
 		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
 		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica il file audio \\ a cui si vuole accedere\end{tabular} \\ \bottomrule
 	\end{tabular}
+\caption{Descrizione dei \textbf{parametri} in input}
 \end{table}
-
-
-\pagebreak
-
-Struttura del \textbf{JSON} restituito:
 
 \begin{table}[!h]
 	\centering
@@ -708,26 +632,19 @@ Struttura del \textbf{JSON} restituito:
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		audio              & oggetto audio \\ \bottomrule
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} restituito}
 \end{table}
 
-\ \linebreak
-
-Esempio di richiesta \textbf{GET}:
-\begin{lstlisting}
-
-/audios/6
-
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.26\textwidth, xrightmargin=.26\textwidth]
+           /audios/6
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio \textbf{JSON} restituito:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
 {
 	"id": 6,
 	"duration": 10,
 	"bit_rate": 4321,
-	"audio_data": "SUQzAwAAAAAAAP/7kkbEs3cGIAAgACAAIAAgACAAAA==",
+	"audio_data": "SUQzAwAAAs3/cGIAAgACAAIAAgACAAAA==",
 	"file": {
 		"id": 6,
 		"size": 12345,
@@ -743,10 +660,7 @@ Esempio \textbf{JSON} restituito:
 \end{lstlisting}
 
 \subsection{POST /videos}
-\ \linebreak
-Questo endpoint permette di accedere a tutti i file video all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST} per salvare i dati sul database.
-
-Struttura del JSON da inviare con una richiesta POST:
+Questo endpoint permette di salvare files video all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}.
 
 \begin{table}[!h]
 	\centering
@@ -764,22 +678,14 @@ Struttura del JSON da inviare con una richiesta POST:
 		latitude           & numerico\\ 
 		longitude          & numerico\\ \bottomrule		
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} da inviare con una \textbf{POST}}
 \end{table}
 
-
-
-\ \linebreak
-Esempio di richiesta \textbf{POST}:
-\begin{lstlisting}
-
-/videos	
-
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{POST}, xleftmargin=.26\textwidth, xrightmargin=.26\textwidth]
+	   /videos	
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio \textbf{JSON} da inviare:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
 {
 	"size" : 4321,
 	"format" : "mkw",
@@ -802,37 +708,26 @@ Questo endpoint permette di accedere ad uno specifico file video presente nel da
 	\begin{tabular}{@{}llll@{}}
 		\toprule
 		\textbf{PARAMETRO} & \textbf{RICHIESTO} & \textbf{VALORE} & \textbf{DESCRIZIONE}                                                                 \\ \midrule
-		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}identifica il file video \\ a cui si vuole accedere\end{tabular} \\ \bottomrule
+		id                 & obbligatorio       & intero          & \begin{tabular}[c]{@{}l@{}}Identifica il file video \\ a cui si vuole accedere.\end{tabular} \\ \bottomrule
 	\end{tabular}
+\caption{Descrizione dei \textbf{parametri} in input}
 \end{table}
-
-
-\pagebreak
-
-Struttura del \textbf{JSON} restituito:
 
 \begin{table}[!h]
 	\centering
 	\begin{tabular}{@{}ll@{}}
 		\toprule
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
-		video              & oggetto video \\ \bottomrule
+		video              & oggetto Video \\ \bottomrule
 	\end{tabular}
+\caption{Struttura del \textbf{JSON} restituito}
 \end{table}
 
-\ \linebreak
-
-Esempio di richiesta \textbf{GET}:
-\begin{lstlisting}
-
-/videos/1
-
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.26\textwidth, xrightmargin=.26\textwidth]
+	  /videos/1
 \end{lstlisting}
 
-\ \linebreak
-
-Esempio \textbf{JSON} restituito:
-\begin{lstlisting}
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
 {
 	"id": 1,
 	"duration": 10,

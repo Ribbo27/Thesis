@@ -19,8 +19,34 @@
 \usepackage{booktabs}
 \usepackage[normalem]{ulem}
 \usepackage{listings}
-%\usepackage{csquotes}
-%\useunder{\uline}{\ul}{}
+\usepackage{fancybox}
+\usepackage{xcolor}
+\usepackage{inconsolata}
+
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+\definecolor{dkblue}{rgb}{0, 0, 254}
+
+\lstset{
+	language        = php,
+	frame			= single,
+	captionpos		= b,
+	basicstyle      = \small\ttfamily,
+	keywordstyle    = \color{dkblue},
+	stringstyle     = \color{red},
+	identifierstyle = \color{black},
+	commentstyle    = \color{gray},
+	emph            =[1]{php},
+	emphstyle       =[1]\color{black},
+	emph            =[2]{public,if,and,null,or,else,foreach,return,as},
+	emphstyle       =[2]\color{violet},
+	emph			=[3]{show, up},
+	emphstyle       =[3]\color{orange},
+	emph			=[4]{Route,get,post,Blueprint,Schema,create,function, Note,find,sqrt,Response,pow,forget},
+	emphstyle       =[4]\color{cyan},	
+}
+
 
 \begin{document}
 	
