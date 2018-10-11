@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  10 OCT 2018 16:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  11 OCT 2018 14:12
 entering extended mode
 **./main.tex
 (main.tex
@@ -965,29 +965,8 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 sty"
 File: lstlang2.sty 2018/09/02 1.7 listings language file
 ) (main.aux (TeX_files/introduction.aux) (TeX_files/framework.aux)
-(TeX_files/urbanStoriesSharing.aux
-
-LaTeX Warning: Label `etichetta' multiply defined.
-
-
-LaTeX Warning: Label `etichetta' multiply defined.
-
-
-LaTeX Warning: Label `etichetta' multiply defined.
-
-
-LaTeX Warning: Label `etichetta' multiply defined.
-
-
-LaTeX Warning: Label `etichetta' multiply defined.
-
-
-LaTeX Warning: Label `etichetta' multiply defined.
-
-
-LaTeX Warning: Label `etichetta' multiply defined.
-
-) (TeX_files/implementazione.aux) (TeX_files/conclusioni.aux))
+(TeX_files/urbanStoriesSharing.aux) (TeX_files/implementazione.aux)
+(TeX_files/conclusioni.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
@@ -1129,7 +1108,7 @@ tim
 pdfTeX warning: pdflatex.exe (file /Users/Ribbo/Desktop/Laurea/Tesi/frontespizi
 oTesi.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
 llowed
-</Users/Ribbo/Desktop/Laurea/Tesi/frontespizioTesi.pdf, id=182, 614.295pt x 794
+</Users/Ribbo/Desktop/Laurea/Tesi/frontespizioTesi.pdf, id=174, 614.295pt x 794
 .97pt>
 File: /Users/Ribbo/Desktop/Laurea/Tesi/frontespizioTesi.pdf Graphic file (type 
 pdf)
@@ -1158,7 +1137,7 @@ llowed
 pdfTeX warning: pdflatex.exe (file /Users/Ribbo/Desktop/Laurea/Tesi/frontespizi
 oTesi.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
 llowed
-</Users/Ribbo/Desktop/Laurea/Tesi/frontespizioTesi.pdf, id=185, page=1, 614.295
+</Users/Ribbo/Desktop/Laurea/Tesi/frontespizioTesi.pdf, id=177, page=1, 614.295
 pt x 794.97pt>
 File: /Users/Ribbo/Desktop/Laurea/Tesi/frontespizioTesi.pdf Graphic file (type 
 pdf)
@@ -1253,12 +1232,16 @@ l.16
 <to be read again> 
                    \relax 
 l.36 	
-       [4]) [5] [6]
+       [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5])
+[6]
 \openout2 = `./TeX_files/urbanStoriesSharing.aux'.
 
  (TeX_files/urbanStoriesSharing.tex
 Capitolo 2.
-<schemaER.png, id=292, 380.622pt x 446.8695pt>
+<schemaER.png, id=283, 380.622pt x 446.8695pt>
 File: schemaER.png Graphic file (type png)
 <use schemaER.png>
 Package pdftex.def Info: schemaER.png  used on input line 12.
@@ -1275,38 +1258,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 [8 <./schemaER.png>] [9] [10]
-Overfull \hbox (7.82744pt too wide) in paragraph at lines 131--133
+Overfull \hbox (7.82744pt too wide) in paragraph at lines 132--134
 \OT1/cmr/m/n/12 Dopo aver de-fi-ni-to la strut-tu-ra del da-ta-ba-se, so-no sta
 -te de-fi-ni-te le API (\OT1/cmr/bx/n/12 Application
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 171--184
+Underfull \hbox (badness 10000) in paragraph at lines 173--186
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--204
+Underfull \hbox (badness 10000) in paragraph at lines 187--206
 []
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 205--219
+Underfull \hbox (badness 10000) in paragraph at lines 207--221
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--233
+Underfull \hbox (badness 10000) in paragraph at lines 222--235
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--247
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
 []
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 248--264
+Underfull \hbox (badness 10000) in paragraph at lines 250--266
 []
  []
 
@@ -1314,7 +1297,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--264
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
-Overfull \hbox (94.58626pt too wide) in paragraph at lines 276--284
+Overfull \hbox (94.58626pt too wide) in paragraph at lines 279--287
  [][] 
  []
 
@@ -1323,8 +1306,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 298.
-LaTeX Font Info:    Try loading font information for OT1+zi4 on input line 298.
+nput line 301.
+LaTeX Font Info:    Try loading font information for OT1+zi4 on input line 301.
 
 
 ("C:\Users\Ribbo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\inconsolata\ot1zi4
@@ -1332,21 +1315,21 @@ LaTeX Font Info:    Try loading font information for OT1+zi4 on input line 298.
 File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 298.
+(Font)              scaled to size 10.95pt on input line 301.
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 300.
+(Font)              scaled to size 12.0pt on input line 303.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 349.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 352.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 431--432
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
@@ -1354,7 +1337,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--432
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
@@ -1371,21 +1354,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (TeX_files/implementazione.tex
 Capitolo 3.
-<Struttura_applicazione.png, id=588, 146.34676pt x 543.83176pt>
+<Struttura_applicazione.png, id=586, 146.34676pt x 543.83176pt>
 File: Struttura_applicazione.png Graphic file (type png)
 <use Struttura_applicazione.png>
 Package pdftex.def Info: Struttura_applicazione.png  used on input line 9.
-(pdftex.def)             Requested size: 125.47835pt x 236.6064pt.
+(pdftex.def)             Requested size: 83.65074pt x 236.6064pt.
+<AppDirectory.png, id=588, 110.814pt x 220.4235pt>
+File: AppDirectory.png Graphic file (type png)
+<use AppDirectory.png>
+Package pdftex.def Info: AppDirectory.png  used on input line 20.
+(pdftex.def)             Requested size: 62.73514pt x 118.30377pt.
 [27
 
 
 
  <./Struttura_applicazione.png>]
-<AppDirectory.png, id=596, 110.814pt x 220.4235pt>
-File: AppDirectory.png Graphic file (type png)
-<use AppDirectory.png>
-Package pdftex.def Info: AppDirectory.png  used on input line 20.
-(pdftex.def)             Requested size: 62.73514pt x 118.30377pt.
 <DatabaseDirectory.png, id=597, 92.14426pt x 69.861pt>
 File: DatabaseDirectory.png Graphic file (type png)
 <use DatabaseDirectory.png>
@@ -1400,23 +1383,52 @@ File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
 (Font)              scaled to size 10.95pt on input line 46.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7740) has occurred while \output is active []
 
  [31]
-[32]) [33]
+Overfull \hbox (2.2297pt too wide) in paragraph at lines 143--145
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+<StorageDirectory.png, id=786, 158.39175pt x 199.947pt>
+File: StorageDirectory.png Graphic file (type png)
+<use StorageDirectory.png>
+Package pdftex.def Info: StorageDirectory.png  used on input line 240.
+(pdftex.def)             Requested size: 125.47614pt x 177.46716pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36 <./StorageDirectory.png>]) [37]
 \openout2 = `./TeX_files/conclusioni.aux'.
 
- (TeX_files/conclusioni.tex [34
+ (TeX_files/conclusioni.tex [38
 
 
 
 ]
 Capitolo 4.
-[35]) [36]
+[39]) [40]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
  (main.aux (TeX_files/introduction.aux) (TeX_files/framework.aux)
@@ -1425,21 +1437,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 55F9E0EB204393CC32873D69E99B6AE9;2933.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: 7853E1C2773F03F4F2646CEC802F935C;2786.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 24249 strings out of 492973
- 436643 string characters out of 3126692
- 802430 words of memory out of 3000000
- 27285 multiletter control sequences out of 15000+200000
+ 24447 strings out of 492973
+ 439416 string characters out of 3126692
+ 806652 words of memory out of 3000000
+ 27390 multiletter control sequences out of 15000+200000
  13158 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,18n,72p,998b,3007s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,18n,72p,998b,3017s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Ribbo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/inconsolata
 /i4-ts1.enc}{C:/Users/Ribbo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/i
 nconsolata/i4-ot1-0.enc} <C:\Users\Ribbo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
@@ -1453,9 +1461,9 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ribbo/AppData/Local/Programs/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ribbo/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Ribbo/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (40 pages, 482975 bytes).
+Output written on main.pdf (44 pages, 519788 bytes).
 PDF statistics:
- 839 PDF objects out of 1000 (max. 8388607)
- 377 named destinations out of 1000 (max. 500000)
- 405 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 982 PDF objects out of 1000 (max. 8388607)
+ 469 named destinations out of 1000 (max. 500000)
+ 394 words of extra memory for PDF output out of 10000 (max. 10000000)
 

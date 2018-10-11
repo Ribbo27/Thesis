@@ -5,12 +5,13 @@ In questo capitolo verrà analizzata la parte progettuale del lavoro svolto foca
 \section{Schema Relazionale}
 \subsection{Entità}
 Nella progettazione del repository centralizzato, per prima cosa, sono state definite le entità. Un'entità rappresenta una classe di oggetti che hanno proprietà comuni ed esistenza autonoma. Un'occorrenza di queste è una istanza della classe rappresentata dall'entità, dunque l'oggetto stesso. In uno schema, ogni entità ha un nome che la identifica univocamente, e viene rappresentata graficamente tramite un rettangolo con il nome dell'entità al suo interno.
-Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo del nostro progetto e i loro relativi attributi:
+Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo del nostro progetto e i loro relativi attributi. Il modello ER finale del progetto è riportato in figura \ref{fig:ERModel};
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics{schemaER.png}
 	\caption{schema relazionale}
+	\label{fig:ERModel}
 \end{figure}
 
 \pagebreak
@@ -18,7 +19,7 @@ Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo
 \begin{itemize}
 	\item \textbf{Photos}
 	
-		L'entità Photos rappresenta, appunto, le foto che vengono memorizzate e richieste nel database. Gli attributi associati sono:
+		L'entità Photos, tabella \ref{tab:photoModel}, rappresenta, appunto, le foto che vengono memorizzate e richieste nel database. Gli attributi associati sono:
 		
 		\begin{itemize}
 			\item \textbf{id} identificatore numerico univoco.
@@ -28,7 +29,7 @@ Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo
 	
 	\item \textbf{Audios}
 	
-		La tabella Audios rappresenta tutti i file di tipo audio. 
+		La tabella Audios, tabella \ref{tab:audioModel} rappresenta tutti i file di tipo audio. 
 		
 		Attributi:
 		
@@ -40,7 +41,7 @@ Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo
 		
 	\item \textbf{Videos}
 	
-		L'entità Videos rappresenta i file video della base di dati.
+		L'entità Videos, tabella \ref{tab:videoModel}, rappresenta i file video della base di dati.
 		Attributi:
 		
 		\begin{itemize}
@@ -54,7 +55,7 @@ Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo
 	
 	\item \textbf{Files}
 		
-		L'entità Files rappresenta una generalizzazione delle precedenti 3 entità. Gli attributi associati a questa tabella sono quindi tutti quei campi che hanno in comune i file multimediali(foto, audio e video):
+		L'entità Files, tabella \ref{tab:fileModel} rappresenta una generalizzazione delle precedenti 3 entità. Gli attributi associati a questa tabella sono quindi tutti quei campi che hanno in comune i file multimediali(foto, audio e video):
 		\begin{itemize}
 			\item \textbf{id} ovvero un identificatore numerico univoco.
 			\item \textbf{size} il quale indica la dimensione del file in byte.
@@ -67,7 +68,7 @@ Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo
 
 	\item \textbf{Notes}
 	
-		La tabella Notes rappresenta le storie condivise dagli utenti con il sistema. Una nota può contenere più tipi di file.
+		L'entità Notes, tabella \ref{tab:noteModel} rappresenta le storie condivise dagli utenti con il sistema. Una nota può contenere più tipi di file.
 		
 		Attributi: 
 		\begin{itemize}
@@ -78,7 +79,7 @@ Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo
 	
 	\item \textbf{Texts}
 	
-		Questa entità rappresenta le note di tipo testo condivise dagli utenti. 
+		L'entità Texts, tabella \ref{tab:textModel}, rappresenta le note di tipo testo condivise dagli utenti. 
 		
 		Attributi:
 		\begin{itemize}
@@ -90,7 +91,7 @@ Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo
 		
 	\item \textbf{Locations}
 	
-		Infine, la tabella Locations rappresenta la geolocalizzazione delle note, infatti, questa, è associata alla tabella Notes.
+		Infine, l'entità Locations, tabella \ref{tab:locationModel}, rappresenta la geolocalizzazione delle note, infatti, questa, è associata alla tabella Notes.
 		
 		Attributi:
 		\begin{itemize}
@@ -132,6 +133,7 @@ Dopo aver definito la struttura del database, sono state definite le API (\textb
 Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'applicazione Web o un server web. Le API sono generalmente classificate come SOAP o REST ed entrambe sono utilizzate per accedere ai servizi Web. In questo progetto sono state definite delle API di tipo REST, che utilizzano gli URL per ricevere o inviare informazioni. REST utilizza quattro diversi verbi HTTP (GET, POST, PUT e DELETE) per eseguire attività.
 
 \subsection{Documentazione API}
+\label{sec:APIDoc}
 
 
 \begin{table}[!h]
@@ -151,7 +153,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		Get    & /videos/\{id\}    & Recuperare un nuovo file video      \\
 		Post   & /videos           & Salvare un nuovo video               \\ \bottomrule
 	\end{tabular}
-\caption{Rappresentazione tabellare degli \textbf{Endpoints} definiti}\label{etichetta}
+\caption{Rappresentazione tabellare degli \textbf{Endpoints} definiti}\label{tab:endpoints}
 \end{table}
 
 \subsection{Risorse}
@@ -165,7 +167,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		id                 & int           & Identificatore della nota \\ 
 		location           & int           & Chiave Esterna            \\ \bottomrule
 	\end{tabular}
-\caption{Descrizione risorsa \textbf{Note}}\label{etichetta}
+\caption{Descrizione risorsa \textbf{Note}}\label{tab:noteModel}
 \end{table}
 
 \ \linebreak
@@ -179,7 +181,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		latitude  & decimal & Rappresentazione della latitudine       \\ 
 		longitude & decimal & Rappresentazione della longitudine      \\ \bottomrule
 	\end{tabular}
-\caption{Descrizione risorsa \textbf{Location}}\label{etichetta}
+\caption{Descrizione risorsa \textbf{Location}}\label{tab:locationModel}
 \end{table}
 
 \ \linebreak
@@ -199,7 +201,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		audio\_id                              & int                               & Relazione con tabella Audios              \\
 		video\_id                              & int                               & Relazione con tabella Videos              \\ \bottomrule
 	\end{tabular}
-\caption{Descrizione risorsa \textbf{File}}\label{etichetta}
+\caption{Descrizione risorsa \textbf{File}}\label{tab:fileModel}
 \end{table}
 
 \ \linebreak
@@ -214,7 +216,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		char\_number       & int           & Numero di caratteri             \\
 		note\_id           & int           & Relazione con tabella Notes      \\ \bottomrule
 	\end{tabular}
-\caption{Descrizione risorsa \textbf{Text}}\label{etichetta}
+\caption{Descrizione risorsa \textbf{Text}}\label{tab:textModel}
 \end{table}
 
 \ \linebreak
@@ -228,7 +230,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		width              & int           & Larghezza della foto      \\
 		height             & int           & Altezza della foto        \\ \bottomrule
 	\end{tabular}
-\caption{Descrizione risorsa \textbf{Photo}}\label{etichetta}
+\caption{Descrizione risorsa \textbf{Photo}}\label{tab:photoModel}
 \end{table}
 
 \ \linebreak
@@ -242,7 +244,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		duration           & int           & Durata dell'audio             \\
 		bit\_rate          & int           & Qualità dell'audio            \\ \bottomrule
 	\end{tabular}
-\caption{Descrizione risorsa \textbf{Audio}}\label{etichetta}
+\caption{Descrizione risorsa \textbf{Audio}}\label{tab:audioModel}
 \end{table}
 
 \ \linebreak
@@ -259,7 +261,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 		bit\_rate          & int           & Qualità dell'audio            \\
 		frame\_rate        & int           & Qualità del video             \\ \bottomrule
 	\end{tabular}
-\caption{Descrizione risorsa \textbf{Video}}\label{etichetta}
+\caption{Descrizione risorsa \textbf{Video}}\label{tab:videoModel}
 \end{table}
 
 
@@ -267,6 +269,7 @@ Le API possono utilizzare le richieste HTTP per ottenere informazioni da un'appl
 \subsection{Endpoints}
 
 \subsection{GET /notes}
+\label{sec:APIDocGetNotes}
 Questo endpoint permette di accedere ai dati del database restituendo tutte le note caricate dagli utenti. 
 Questo endpoint è accessibile solo con una richiesta GET; inoltre, prevede la possibilità di passare dei parametri in query string.
 
@@ -317,7 +320,7 @@ Questo endpoint è accessibile solo con una richiesta GET; inoltre, prevede la p
 \end{lstlisting}
 
 \pagebreak
-\begin{lstlisting}[caption = Esempio di chiamata con \textbf{query string}, xleftmargin=.15\textwidth, xrightmargin=.15\textwidth]
+\begin{lstlisting}[caption = Esempio di chiamata con \textbf{query string},label={lst:QueryStringLocExample}, xleftmargin=.15\textwidth, xrightmargin=.15\textwidth]
   /notes?lat=12.45&long=13.45&max_distance=1
 \end{lstlisting}
 

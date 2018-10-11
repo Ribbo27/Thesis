@@ -1,23 +1,15 @@
-\chapter{Risultati ottenuti e conclusioni}
-In quest'ultimo capitolo vengono presentati i risultati ottenuti e i possibili miglioramenti per un possibile sviluppo futuro del progetto.
+\chapter{Sviluppi futuri e conclusioni}
+In quest'ultimo capitolo vengono presentate le conclusioni e i miglioramenti attuabili per un possibile sviluppo futuro del progetto.
 
-
-
-\section{Risultati ottenuti}
-Il lavoro svolto durante questo progetto di stage ha permesso di ottenere un repository in grado di inviare e ricevere dati multimediali in formato JSON codificati in base64 da e verso un qualsiasi tipo di client, rispettando le direttive delle API sviluppate e descritte nel capitolo 3. 
-
-\subsection{Ricezione dei dati}
-Dal punto di vista della ricezione dei dati, il sistema, è in grado di ricevere qualsiasi file multimediale sottoforma di oggetti JSON e salvarli logicamente nel database creato e fisicamente sull'ipotetico server che ospiterà il web service.
-
-\subsection{Invio dei dati}
-Per quanto riguarda l'invio dei dati, invece, tramite le query descritte nel Capitolo 3, il sistema può recuperare tutti i dati salvati, genericamente oppure in base al tipo di file. Inoltre, si possono reperire note in base alla loro geolocalizzazione o richiedere files entro una certa distanza dalla posizione dell'utente.
-
-\subsection{Sviluppi futuri}
-
-\pagebreak
 \section{Conclusioni}
-Dall'analisi del risultato finale ottenuto viene compreso come il lavoro fin'ora prodotto sia funzionante ma migliorabile. 
-Ad esempio, si potrebbe implementare la possibilità di gestire l'utenza, quindi aggiungere un servizio di autenticazione che permetta all'utente finale di avere uno storico dei file postati da esso o ancora di poter reperire informazioni riguardo le note postate dagli amici degli utenti. Questo prevede una riprogettazione del modello relazionale, poichè, allo stato attuale non è stato predisposto per questo tipo di funzioni.
+Il lavoro svolto durante questo progetto di stage ha permesso di ottenere un repository in grado di ricevere e inviare dati multimediali \textit{\textbf{codificati in Base64}} in \textit{\textbf{formato JSON}} da e verso un qualsiasi tipo di client, rispettando le direttive delle API sviluppate e descritte nella sezione \ref{sec:APIDoc}. \\
+Nello specifico, la parte di ricezione dei dati, permette di prendere i files multimediali ricevuti in input, sottoforma di \textit{\textbf{oggetti JSON}}, salvandoli fisicamente sul disco locale della macchina che ospiterà il sistema e creando, a livello logico, i record corrispondenti al file nel database.
+La parte di invio dei dati, invece è in grado di interrogare il database in base ai diversi parametri che è possibile passare in input, tramite query string e non, con le \textit{\textbf{richieste HTTP}} di tipo \textit{\textbf{GET}}.
 
-Un altro aspetto migliorabile del web service è il lato della sicurezza dei dati, non gestito durante questo progetto.
-Molti altri aspetti sono migliorabili o modificabili in base al tipo di client frontend, ancora in fase di progettazione, che verrà sviluppato in futuro.
+\section{Sviluppi futuri}
+Per quanto il sistema sia funzionante, è possibile migliorarlo sotto diversi aspetti.
+Riguardo al codice attualmente sviluppato si potrebbe effettuare una fase di \textit{\textbf{refactoring}} in modo tale da alleggerire le operazioni effettuate dai controller, soprattutto nella fase di salvataggio, creando delle classi di appoggio che si occupano di astrarre la logica di memorizzazione.
+Relativamente al sistema di archiviazione, invece, si potrebbe implementare la possibilità del salvataggio dei files sul cloud, utilizzando un cloud service come ad esempio \textit{\textbf{Amazon S3}} o \textit{\textbf{Rackspace Cloud Storage}} ben supportati dal framework utilizzato per lo sviluppo del progetto.
+Un'altro miglioramento utile e attuabile, non gestito durante lo sviluppo del progetto, è la possibilità di aggiungere un servizio che gestisca l'utenza dell'app introducendo una nuova entità \textit{\textbf{users}} al modello relazionale attuale, quindi implementare un servizio di autenticazione per permettere l'accesso al sistema e dare la possibilità all'utente di avere uno storico delle note postate o anche di reperire informazioni dagli 'amici' degli utenti introducendo una relazione di \textit{\textbf{'friendship'}} tra le istanze dell'entità \textit{\textbf{users}}.
+Molti altri aspetti sono migliorabili o modificabili in base al tipo di \textit{\textbf{sistema front-end}}, che al momento è in fase di progettazione e sviluppo.
+

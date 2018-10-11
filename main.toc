@@ -8,7 +8,7 @@
 \contentsline {subsection}{\numberline {1.1.4}Controller}{4}{subsection.1.1.4}
 \contentsline {subsection}{\numberline {1.1.5}Database}{4}{subsection.1.1.5}
 \contentsline {section}{\numberline {1.2}Composer}{5}{section.1.2}
-\contentsline {section}{\numberline {1.3}Artisan}{5}{section.1.3}
+\contentsline {section}{\numberline {1.3}Artisan}{6}{section.1.3}
 \contentsline {chapter}{\numberline {2}Progettazione}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Schema Relazionale}{7}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Entit\IeC {\`a}}{7}{subsection.2.1.1}
@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {3.1}Struttura dell'applicazione}{27}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}App directory}{28}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Database directory}{28}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Storage directory}{29}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.3}Storage directory}{28}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}Implementazione database}{29}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Codifica dei dati}{30}{subsection.3.2.1}
 \contentsline {section}{\numberline {3.3}Implementazione web service}{31}{section.3.3}
@@ -40,11 +40,9 @@
 \contentsline {subsection}{\numberline {3.3.2}Controllers}{31}{subsection.3.3.2}
 \contentsline {subsubsection}{Metodo Index}{32}{section*.3}
 \contentsline {subsubsection}{Metodo Store}{32}{section*.4}
-\contentsline {subsubsection}{Metodo Show}{32}{section*.5}
-\contentsline {subsubsection}{Query string}{32}{section*.6}
-\contentsline {chapter}{\numberline {4}Risultati ottenuti e conclusioni}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Risultati ottenuti}{35}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Ricezione dei dati}{35}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Invio dei dati}{35}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Sviluppi futuri}{35}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Conclusioni}{36}{section.4.2}
+\contentsline {subsubsection}{Metodo Show}{33}{section*.5}
+\contentsline {subsubsection}{Query string}{33}{section*.6}
+\contentsline {section}{\numberline {3.4}Archivio di salvataggio}{36}{section.3.4}
+\contentsline {chapter}{\numberline {4}Sviluppi futuri e conclusioni}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}Conclusioni}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Sviluppi futuri}{39}{section.4.2}
