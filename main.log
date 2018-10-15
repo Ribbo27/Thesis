@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  11 OCT 2018 16:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  15 OCT 2018 14:49
 entering extended mode
 **./main.tex
 (main.tex
@@ -1198,18 +1198,18 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
  [4]
 \openout2 = `./TeX_files/introduction.aux'.
 
- (TeX_files/introduction.texpdfTeX warning (ext4): destination with the same id
-entifier (name{page.1}) has been already used, duplicate ignored
+ (TeX_files/introduction.tex)pdfTeX warning (ext4): destination with the same i
+dentifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.16 
-      [1
+l.61 	\include{./TeX_files/introduction}
+                                         [1
 
 
 
 
-])pdfTeX warning (ext4): destination with the same identifier (name{page.2}) ha
-s been already used, duplicate ignored
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.61 	\include{./TeX_files/introduction}
@@ -1233,7 +1233,7 @@ l.16
                    \relax 
 l.36 	
        [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3657) has occurred while \output is active []
 
  [5])
 [6]
@@ -1241,7 +1241,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (TeX_files/urbanStoriesSharing.tex
 Capitolo 2.
-<schemaER.png, id=283, 380.622pt x 446.8695pt>
+<schemaER.png, id=296, 380.622pt x 446.8695pt>
 File: schemaER.png Graphic file (type png)
 <use schemaER.png>
 Package pdftex.def Info: schemaER.png  used on input line 12.
@@ -1324,6 +1324,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [16]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 352.
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 375.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1342,7 +1344,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--499
  []
 
 
-Underfull \vbox (badness 7433) has occurred while \output is active []
+Underfull \vbox (badness 4454) has occurred while \output is active []
 
  [21]
 [22]
@@ -1354,12 +1356,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (TeX_files/implementazione.tex
 Capitolo 3.
-<Struttura_applicazione.png, id=586, 146.34676pt x 543.83176pt>
+<Struttura_applicazione.png, id=601, 146.34676pt x 543.83176pt>
 File: Struttura_applicazione.png Graphic file (type png)
 <use Struttura_applicazione.png>
 Package pdftex.def Info: Struttura_applicazione.png  used on input line 9.
 (pdftex.def)             Requested size: 83.65074pt x 236.6064pt.
-<AppDirectory.png, id=588, 110.814pt x 220.4235pt>
+<AppDirectory.png, id=603, 110.814pt x 220.4235pt>
 File: AppDirectory.png Graphic file (type png)
 <use AppDirectory.png>
 Package pdftex.def Info: AppDirectory.png  used on input line 20.
@@ -1369,7 +1371,7 @@ Package pdftex.def Info: AppDirectory.png  used on input line 20.
 
 
  <./Struttura_applicazione.png>]
-<DatabaseDirectory.png, id=597, 92.14426pt x 69.861pt>
+<DatabaseDirectory.png, id=612, 92.14426pt x 69.861pt>
 File: DatabaseDirectory.png Graphic file (type png)
 <use DatabaseDirectory.png>
 Package pdftex.def Info: DatabaseDirectory.png  used on input line 31.
@@ -1411,7 +1413,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35]
-<StorageDirectory.png, id=786, 158.39175pt x 199.947pt>
+<StorageDirectory.png, id=804, 158.39175pt x 199.947pt>
 File: StorageDirectory.png Graphic file (type png)
 <use StorageDirectory.png>
 Package pdftex.def Info: StorageDirectory.png  used on input line 240.
@@ -1435,65 +1437,60 @@ g-[]related-[]models-[]in-[]laravel-[]5-[]1 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 []$\OT1/zi4/m/n/12 https : / / stackoverflow . com / questions / 47989148 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
-[]$\OT1/zi4/m/n/12 https : / / stackoverflow . com / questions / 49670746 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
-[]$\OT1/zi4/m/n/12 https : / / stackoverflow . com / questions / 29751104 /
- []
-
-LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 8.0pt on input line 99.
-LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 6.0pt on input line 99.
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-[]$\OT1/zi4/m/n/12 http : / / it . wikipedia . org / w / index . php ? title = 
-Application[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
-[]$\OT1/zi4/m/n/12 https : / / it . wikipedia . org / wiki / Modello[]E-[]R # I
-[]costrutti[]principali[]
  []
 
 [41
 
 
 
-] [42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
+]
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
+[]$\OT1/zi4/m/n/12 https : / / stackoverflow . com / questions / 49670746 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+[]$\OT1/zi4/m/n/12 https : / / stackoverflow . com / questions / 29751104 /
+ []
+
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 8.0pt on input line 114.
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 6.0pt on input line 114.
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+[]$\OT1/zi4/m/n/12 http : / / it . wikipedia . org / w / index . php ? title = 
+Application[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
+[]$\OT1/zi4/m/n/12 https : / / it . wikipedia . org / wiki / Modello[]E-[]R # I
+[]costrutti[]principali[]
+ []
+
+[42]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
  (main.aux (TeX_files/introduction.aux) (TeX_files/framework.aux)
 (TeX_files/urbanStoriesSharing.aux) (TeX_files/implementazione.aux)
-(TeX_files/conclusioni.aux)
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
+(TeX_files/conclusioni.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7853E1C2773F03F4F2646CEC802F935C;2786.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
+(rerunfilecheck)             Checksum: 86519FC4C04B3BB3B64C7D40142DC4BF;2786.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
  ) 
 Here is how much of TeX's memory you used:
- 24496 strings out of 492973
- 439969 string characters out of 3126692
+ 24522 strings out of 492973
+ 440293 string characters out of 3126692
  806652 words of memory out of 3000000
- 27425 multiletter control sequences out of 15000+200000
- 13562 words of font info for 51 fonts, out of 3000000 for 9000
+ 27445 multiletter control sequences out of 15000+200000
+ 13817 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,18n,72p,998b,3017s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,18n,72p,1013b,3017s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Ribbo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/inconsolata
 /i4-ts1.enc}{C:/Users/Ribbo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/i
 nconsolata/i4-ot1-0.enc} <C:\Users\Ribbo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
@@ -1507,9 +1504,9 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ribbo/AppData/Local/Programs/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ribbo/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Ribbo/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (46 pages, 528685 bytes).
+Output written on main.pdf (46 pages, 533794 bytes).
 PDF statistics:
- 1021 PDF objects out of 1200 (max. 8388607)
- 483 named destinations out of 1000 (max. 500000)
+ 1043 PDF objects out of 1200 (max. 8388607)
+ 489 named destinations out of 1000 (max. 500000)
  394 words of extra memory for PDF output out of 10000 (max. 10000000)
 

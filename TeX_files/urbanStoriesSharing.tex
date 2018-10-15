@@ -2,10 +2,10 @@
 
 In questo capitolo verrà analizzata la parte progettuale del lavoro svolto focalizzandosi sui due pilastri principali, quali lo schema relazionale nella sezione 2.1 e le API nella sezione 2.2.
 
-\section{Schema Relazionale}
+\section{Schema Relazionale} 
 \subsection{Entità}
 Nella progettazione del repository centralizzato, per prima cosa, sono state definite le entità. Un'entità rappresenta una classe di oggetti che hanno proprietà comuni ed esistenza autonoma. Un'occorrenza di queste è una istanza della classe rappresentata dall'entità, dunque l'oggetto stesso. In uno schema, ogni entità ha un nome che la identifica univocamente, e viene rappresentata graficamente tramite un rettangolo con il nome dell'entità al suo interno.
-Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo del nostro progetto e i loro relativi attributi. Il modello ER finale del progetto è riportato in figura \ref{fig:ERModel};
+Dai requisiti iniziali bisogna quindi specificare le entità utili allo sviluppo del progetto e i loro relativi attributi. Il modello ER \citep{rif8} finale del progetto è riportato in figura \ref{fig:ERModel};
 
 \begin{figure}[!h]
 	\centering
@@ -294,15 +294,15 @@ Questo endpoint è accessibile solo con una richiesta GET; inoltre, prevede la p
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		notes              & array di oggetti Note \\ \bottomrule
 	\end{tabular}
-\caption{Struttura del \textbf{JSON} restituito}
+\caption{Struttura del \textbf{JSON} restituito con una richiesta \textbf{GET /notes}}
 \end{table}
 
 \pagebreak
-\begin{lstlisting}[caption = Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+\begin{lstlisting}[caption = Esempio di richiesta \textbf{GET}, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
 	/notes
 \end{lstlisting}
 
-\begin{lstlisting}[caption = Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption = Esempio \textbf{JSON} restituito con  richiesta \textbf{GET /notes}]
 [
 	{
 		"id": 1,
@@ -324,7 +324,7 @@ Questo endpoint è accessibile solo con una richiesta GET; inoltre, prevede la p
   /notes?lat=12.45&long=13.45&max_distance=1
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito con richiesta \textbf{GET /notes} e \textbf{query string}]
 {
 	"id": 4,
 	"location_id": 4,
@@ -372,15 +372,15 @@ Questo endpoint permette di accedere ai dati del database restituendo la nota sp
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		note              & oggetto di tipo Note \\ \bottomrule
 	\end{tabular}
-\caption{Struttura del \textbf{JSON} restituito}
+\caption{Struttura del \textbf{JSON} restituito con richiesta \textbf{GET /notes/\{id\}}}
 \end{table}
 
 
-\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
 	/notes/1
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito con richiesta \textbf{GET /notes/\{id\}}]
 {
 	"id": 1,
 	"location_id": 1,
@@ -408,15 +408,15 @@ Questo endpoint permette di accedere ad uno specifico file passando come paramet
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		file              & oggetto di tipo File \\ \bottomrule
 	\end{tabular}
-\caption{Struttura del \textbf{JSON} restituito}
+\caption{Struttura del \textbf{JSON} restituito con richiesta \textbf{GET /files/\{id\}}}
 \end{table}
 
 
-\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
 	/files/1
 \end{lstlisting}
 \pagebreak
-\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito con richiesta \textbf{GET /files/\{id\}}]
 {
 	"id": 1,
 	"size": 12345,
@@ -445,11 +445,11 @@ Questo endpoint permette di salvare note testuali all'interno del database. Non 
 \caption{Struttura del \textbf{JSON} da inviare con una \textbf{POST}}
 \end{table}
 
-\begin{lstlisting}[caption=Esempio di \textbf{POST}, xleftmargin=.32\textwidth, xrightmargin=.32\textwidth]
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{POST}, xleftmargin=.32\textwidth, xrightmargin=.32\textwidth]
 	/texts	
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare con richiesta \textbf{POST /texts}]
 {
 	"content": "lorem ipsum, quia dolor sit",
 	"latitude": 14.6543,
@@ -477,14 +477,14 @@ Questo endpoint permette di accedere ad una specifica nota testuale. E' accessib
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		text              & oggetto di tipo Text \\ \bottomrule
 	\end{tabular}
-\caption{Struttura del \textbf{JSON} restituito}
+\caption{Struttura del \textbf{JSON} restituito con richiesta \textbf{GET /texts/\{id\}}}
 \end{table}
 
-\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.3\textwidth, xrightmargin=.3\textwidth]
 	/texts/4
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito con richiesta \textbf{GET /texts/\{id\}}]
 {
 	"id": 4,
 	"content": "Testo Di prova TEST RESPONSE",
@@ -495,7 +495,7 @@ Questo endpoint permette di accedere ad una specifica nota testuale. E' accessib
 
 \pagebreak
 \subsection{POST /photos}
-Questo endpoint permette di salvare delle foto all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}.\\
+Questo endpoint permette di salvare delle foto all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}. Inoltre il campo \textit{\textbf{image\_data}} deve contenere la \textbf{codifica in base64} del file.\\
 
 \begin{table}[!h]
 	\centering
@@ -517,7 +517,7 @@ Questo endpoint permette di salvare delle foto all'interno del database. Non nec
 	  /photos	
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare con richiesta \textbf{POST /photos}]
 {
 	"size" : 4321,
 	"format" : "png",
@@ -532,7 +532,7 @@ Questo endpoint permette di salvare delle foto all'interno del database. Non nec
 
 \pagebreak
 \subsection{GET /photos/\{id\}}
-Questo endpoint permette di accedere ad una specifica foto presente nel database. E' accessibile solo con una richiesta \textbf{GET}.
+Questo endpoint permette di accedere ad una specifica foto presente nel database. E' accessibile solo con una richiesta \textbf{GET}. Tra i valori restituiti il campo \textit{\textbf{image\_data}} contiene la \textbf{codifica in base64} del file.
 
 \begin{table}[!h]
 	\centering
@@ -551,14 +551,14 @@ Questo endpoint permette di accedere ad una specifica foto presente nel database
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		photo              & oggetto photo \\ \bottomrule
 	\end{tabular}
-\caption{Struttura del \textbf{JSON} restituito}
+\caption{Struttura del \textbf{JSON} restituito con richiesta \textbf{GET /photos/\{id\}}}
 \end{table}
 
-\begin{lstlisting}[caption=Esempio di chiamata, xleftmargin=.30\textwidth, xrightmargin=.30\textwidth]
+\begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.30\textwidth, xrightmargin=.30\textwidth]
 	/photos/4
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito con richiesta \textbf{GET /photos/\{id\}}]
 {
 	"id": 4,
 	"width": 1920,
@@ -580,7 +580,7 @@ Questo endpoint permette di accedere ad una specifica foto presente nel database
 
 
 \subsection{POST /audios}
-Questo endpoint permette di salvare files audio all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}.
+Questo endpoint permette di salvare files audio all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}. Inoltre il campo \textit{\textbf{audio\_data}} deve contenere la \textbf{codifica in base64} del file.
 
 \begin{table}[!h]
 	\centering
@@ -602,7 +602,7 @@ Questo endpoint permette di salvare files audio all'interno del database. Non ne
 	  /audios	
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare con richiesta \textbf{POST /audios}]
 {
 	"size" : 4321,
 	"format" : "mp3",
@@ -616,7 +616,7 @@ Questo endpoint permette di salvare files audio all'interno del database. Non ne
 
 \pagebreak
 \subsection{GET /audios/\{id\}}
-Questo endpoint permette di accedere ad uno specifico file audio presente nel database ed è accessibile solo con una richiesta \textbf{GET}.
+Questo endpoint permette di accedere ad uno specifico file audio presente nel database ed è accessibile solo con una richiesta \textbf{GET}. Tra i valori restituiti il campo \textit{\textbf{audio\_data}} contiene la \textbf{codifica in base64} del file.
 
 \begin{table}[!h]
 	\centering
@@ -635,14 +635,14 @@ Questo endpoint permette di accedere ad uno specifico file audio presente nel da
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		audio              & oggetto audio \\ \bottomrule
 	\end{tabular}
-\caption{Struttura del \textbf{JSON} restituito}
+\caption{Struttura del \textbf{JSON} restituito con richiesta \textbf{GET /audios/\{id\}}}
 \end{table}
 
 \begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.26\textwidth, xrightmargin=.26\textwidth]
            /audios/6
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito con richiesta \textbf{GET /audios/\{id\}}]
 {
 	"id": 6,
 	"duration": 10,
@@ -663,7 +663,7 @@ Questo endpoint permette di accedere ad uno specifico file audio presente nel da
 \end{lstlisting}
 
 \subsection{POST /videos}
-Questo endpoint permette di salvare files video all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}.
+Questo endpoint permette di salvare files video all'interno del database. Non necessita di parametri ed è accessibile con una richiesta HTTP di tipo \textbf{POST}. Inoltre il campo \textit{\textbf{video\_data}} deve contenere la \textbf{codifica in base64} del file.
 
 \begin{table}[!h]
 	\centering
@@ -688,7 +688,7 @@ Questo endpoint permette di salvare files video all'interno del database. Non ne
 	   /videos	
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} da inviare con richiesta \textbf{POST /videos}]
 {
 	"size" : 4321,
 	"format" : "mkw",
@@ -704,7 +704,7 @@ Questo endpoint permette di salvare files video all'interno del database. Non ne
 \end{lstlisting}
 
 \subsection{GET /videos/\{id\}}
-Questo endpoint permette di accedere ad uno specifico file video presente nel database ed è accessibile solo con una richiesta \textbf{GET}.
+Questo endpoint permette di accedere ad uno specifico file video presente nel database ed è accessibile solo con una richiesta \textbf{GET}. Tra i valori restituiti il campo \textit{\textbf{video\_data}} contiene la \textbf{codifica in base64} del file.
 
 \begin{table}[!h]
 	\centering
@@ -723,14 +723,14 @@ Questo endpoint permette di accedere ad uno specifico file video presente nel da
 		\textbf{PARAMETRO} & \textbf{VALORE}  \\ \midrule
 		video              & oggetto Video \\ \bottomrule
 	\end{tabular}
-\caption{Struttura del \textbf{JSON} restituito}
+\caption{Struttura del \textbf{JSON} restituito con richiesta \textbf{GET}}
 \end{table}
 \vspace{-6px}
 \begin{lstlisting}[caption=Esempio di richiesta \textbf{GET}, xleftmargin=.26\textwidth, xrightmargin=.26\textwidth]
 	  /videos/1
 \end{lstlisting}
 \vspace{-5px}
-\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito]
+\begin{lstlisting}[caption=Esempio \textbf{JSON} restituito con richiesta \textbf{GET /videos/\{id\}}]
 {
 	"id": 1,
 	"duration": 10,

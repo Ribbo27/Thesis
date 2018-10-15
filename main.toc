@@ -43,6 +43,6 @@
 \contentsline {subsubsection}{Metodo Show}{33}{section*.5}
 \contentsline {subsubsection}{Query string}{33}{section*.6}
 \contentsline {section}{\numberline {3.4}Archivio di salvataggio}{36}{section.3.4}
-\contentsline {chapter}{\numberline {4}Sviluppi futuri e conclusioni}{39}{chapter.4}
+\contentsline {chapter}{\numberline {4}Conclusioni e sviluppi futuri}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Conclusioni}{39}{section.4.1}
 \contentsline {section}{\numberline {4.2}Sviluppi futuri}{39}{section.4.2}

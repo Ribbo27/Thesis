@@ -3,10 +3,10 @@
 Questo capitolo si concentrerà solo sulle funzionalità offerte dal framework utilizzate durante la realizzazione dei servizi web per la raccoltà dei dati.
 
 \section{Laravel}
-Laravel è un framework per lo sviluppo di applicazioni web che cerca di facilitare il processo di sviluppo, semplificando le attività ripetitive utilizzate nella maggior parte delle applicazioni Web di oggi.
+Laravel è un framework \citep{rif5} per lo sviluppo di applicazioni web che cerca di facilitare il processo di sviluppo, semplificando le attività ripetitive utilizzate nella maggior parte delle applicazioni Web di oggi.
 Dal momento che riesce a fare tutti i compiti essenziali che vanno dalla gestione del web e gestione del database alla generazione di codice HTML, Laravel è chiamato \textbf{full stack framework}. Questo ambiente di sviluppo web integrato è pensato per offrire un miglioramento nel flusso di lavoro dello sviluppatore.
 
-A differenza di altri ambienti di sviluppo, Laravel necessita solo di qualche modifica al codice di configurazione PHP ed è pronto per l'uso. Inoltre, l'utilizzo di pochi file di configurazione consente alle applicazioni web Laravel di avere un struttura del codice simile che le rende molto caratteristiche e facilmente identificabili. D'altro canto questo potrebbe essere visto come un vincolo su come lo sviluppatore intende organizzare la propria appliczione. Tuttavia, questi vincoli rendono molto più facile e veloce la creazione di applicazioni Web. Inoltre offre una macchina virtuale, \textbf{Laravel Homestead}, Vagrant pre-confezionata che fornisce un ambiente di sviluppo senza che sia necessario installare PHP, un server Web e qualsiasi altro software server sul computer locale. Le virtual machine di Vagrant sono completamente usa e getta quindi se qualcosa va storto, la si puo distruggere e ricreare in pochi minuti.
+A differenza di altri ambienti di sviluppo, Laravel necessita solo di qualche modifica al codice di configurazione PHP ed è pronto per l'uso. Inoltre, l'utilizzo di pochi file di configurazione consente alle applicazioni web Laravel di avere un struttura del codice simile che le rende molto caratteristiche e facilmente identificabili. D'altro canto questo potrebbe essere visto come un vincolo su come lo sviluppatore intende organizzare la propria appliczione. Tuttavia, questi vincoli rendono molto più facile e veloce la creazione di applicazioni Web. Inoltre offre una macchina virtuale Vagrant pre-confezionata, \textbf{Laravel Homestead} \citep{rif13}, che fornisce un ambiente di sviluppo senza che sia necessario installare PHP, un server Web e qualsiasi altro software server sul computer locale. Le virtual machine di Vagrant sono completamente usa e getta quindi se qualcosa va storto, la si puo distruggere e ricreare in pochi minuti.
 
 In questo progetto le funzionalità utilizzate di Laravel sono l'Eloquent ORM, i model, le route, i controller e i database.
 
@@ -15,16 +15,16 @@ L'ORM è una tecnica di programmazione che aiuta a convertire i dati tra sistemi
 A questo scopo, Laravel, fornisce \textbf{Eloquent ORM} che consente di lavorare con gli oggetti e le tabelle del database utilizzando una sintassi semplice ed intuitiva. Ogni tabella del database ha un \textbf{modello} corrispondente utilizzato per l'interazione con quella tabella. 
 
 \subsection{Model}
-Un Model è lo strumento con cui lo sviluppatore può manipolare i dati. Può essere considerato uno strato collocato tra i dati e l'applicazione.
+Un Model \citep{rif16}è lo strumento con cui lo sviluppatore può manipolare i dati. Può essere considerato uno strato collocato tra i dati e l'applicazione.
 
 \subsection{Route}
-Le route permettono di definire gli instradamenti delle richieste HTTP. La loro funzione base è quella di definire come va gestita una certa richiesta HTTP. Avendo utilizzato in questo progetto delle classi Controller, le route si limiteranno a instradare le varie richieste verso l'opportuno controller.
+Le route \citep{rif15}permettono di definire gli instradamenti delle richieste HTTP. La loro funzione base è quella di definire come va gestita una certa richiesta HTTP. Avendo utilizzato in questo progetto delle classi Controller, le route si limiteranno a instradare le varie richieste verso l'opportuno controller.
 
 \subsection{Controller}
-Come anticipato nella sezione 1.1, Laravel semplifica molte operazioni. I controller fanno parte di queste semplificazioni permettendo di raggruppare ed organizzare tutta la logica di gestione delle richieste HTTP. I controller possono raggruppare la logica di gestione delle richieste correlate in una singola classe.
+Come anticipato nella sezione 1.1, Laravel semplifica molte operazioni. I controller \citep{rif14} fanno parte di queste semplificazioni permettendo di raggruppare ed organizzare tutta la logica di gestione delle richieste HTTP. I controller possono raggruppare la logica di gestione delle richieste correlate in una singola classe.
 
 \subsection{Database}
-L'interazione con i database offerta dal framework può essere strutturata in 3 parti:
+L'interazione con i database offerta dal framework\citep{rif17} può essere strutturata in 3 parti:
 \begin{itemize}
 	\item \textbf{Eloquent ORM}
 	

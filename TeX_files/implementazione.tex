@@ -33,7 +33,7 @@ La directory Console contiene tutti i comandi Artisan personalizzati, mentre la 
 	\label{fig:DBDirectory}
 \end{figure}
 
-La direcory \textit{\textbf{Database}}, visibile in figura \ref{fig:DBDirectory}, contiene le migrazioni della base di dati e i file di \textit{\textbf{seeds}}, utili a popolare il modello.
+La directory \textit{\textbf{Database}}, visibile in figura \ref{fig:DBDirectory}, contiene le migrazioni della base di dati e i file di \textit{\textbf{seeds}}, utili a popolare il modello.
 
 \subsection{Storage directory}
 La directory di archiviazione contiene l'archivio \textit{\textbf{/app/directory}} pubblico, il quale, viene utilizzato per archiviare file generati dall'utente, ovvero le note contenenti i file multimediali, che devono essere accessibili al pubblico. 
@@ -122,11 +122,11 @@ Le routes, definite nel listato \ref{lst:RoutesDef}, vengono caricate dal \texti
 
 Definite le routes, sono stati realizzati i vari controller. Per ogni tipologia di file caricabile è stato definito un controller che gestisce le varie operazioni di richiesta e salvataggio dati.
 Per ogni controller, quindi, sono stati definiti gli opportuni metodi che gestiscono le varie richieste HTTP;
-I nomi dei metodi definiti all'interno dei controller sono stati standardizzati in modo da permettere una più semplice comprensione.
+i nomi dei metodi definiti all'interno dei controller sono stati standardizzati in modo da permettere una più semplice comprensione.
 
 \pagebreak
 \subsubsection{Metodo Index}
-Il metodo \textit{\textbf{index}}, all'interno di un controller, risponde ad una richiesta di tipo \textit{\textbf{GET}} e si occupa di recuperare i file richiesti dal database. Il metodo può ritornare una collezione di oggetti specifici, identificati dai parametri passati tramite query string oppure una collezione di tutte le note registrate nel database. Un esempio è riportato nel listato \ref{lst:NoteController@index}.
+Il metodo \textit{\textbf{index}}, all'interno di un controller, risponde ad una richiesta di tipo \textit{\textbf{GET}} e si occupa di recuperare i file richiesti dal database. Il metodo può restituire una collezione di oggetti specifici, identificati dai parametri passati tramite query string oppure una collezione di tutte le note registrate nel database. Un esempio è riportato nel listato \ref{lst:NoteController@index}.
 
 \begin{lstlisting}[caption={Funzione \textit{\textbf{index}} del controller NoteController},label={lst:NoteController@index}]
 public function index(Request $request) {
@@ -149,8 +149,8 @@ public function index(Request $request) {
 \end{lstlisting}
 
 \subsubsection{Metodo Store}
-l metodo \textit{\textbf{store}} si occupa della gestione delle richieste HTTP di tipo \textit{\textbf{POST}}. 
-Ovvero gestisce tutte le operazioni di salvataggio di ogni tipo di files.
+Il metodo \textit{\textbf{store}} si occupa della gestione delle richieste HTTP di tipo \textit{\textbf{POST}}. 
+Ovvero gestisce tutte le operazioni di salvataggio di ogni tipo di files \citep{rif2}\citep{rif4}.
 Un esempio di \textit{\textbf{store}} è riportato nel listato \ref{lst:storeVideo}.
 
 \pagebreak
@@ -171,7 +171,7 @@ Il un metodo \textit{\textbf{show}}, riportato nel listato \ref{lst:NoteControll
 \subsubsection{Query string}
 Quando viene effettuata una richiesta HTTP di tipo \textit{\textbf{GET}} può essere necessario passare dei parametri in \textit{\textbf{query string}} per specificare una certa tipologia di files da reperire.
 Per permettere questo tipo di operazioni è stata implementata la gestione delle query string.
-Sono stati previsti diversi tipi di parametri in input tramite query string. Il caso principale è quello di reperire delle note entro una certa distanza da una posizione data; Per un esempio di chiamata con parametri in query string potete visionare il listato \ref{lst:QueryStringLocExample} presente in sezione \ref{sec:APIDocGetNotes}. 
+Sono stati previsti diversi tipi di parametri in input tramite query string. Il caso principale è quello di reperire delle note entro una certa distanza da una posizione data; per un esempio di chiamata con parametri in query string si può visionare il listato \ref{lst:QueryStringLocExample} presente in sezione \ref{sec:APIDocGetNotes}. 
 
 La logica alla base di questa operazione, visibile nel listato \ref{lst:QueryStringLocation}, è quella di ottenere tutti i parametri passati in query string, ovvero le coordinate geografiche dell'utente e la distanza massima entro la quale si vogliono recuperare i dati; dopodichè, vengono ciclate tutte le note all'interno del repository e, sfruttando il teorema di Pitagora, vengono selezionate solo le note richieste.
 \pagebreak
