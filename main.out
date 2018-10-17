@@ -1,31 +1,31 @@
-\BOOKMARK [0][-]{chapter.1}{Tecnologie utilizzate}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Laravel}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{ORM: Object-Relational Mapping}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Model}{section.1.1}% 4
-\BOOKMARK [2][-]{subsection.1.1.3}{Route}{section.1.1}% 5
-\BOOKMARK [2][-]{subsection.1.1.4}{Controller}{section.1.1}% 6
-\BOOKMARK [2][-]{subsection.1.1.5}{Database}{section.1.1}% 7
-\BOOKMARK [1][-]{section.1.2}{Composer}{chapter.1}% 8
-\BOOKMARK [1][-]{section.1.3}{Artisan}{chapter.1}% 9
-\BOOKMARK [0][-]{chapter.2}{Progettazione}{}% 10
-\BOOKMARK [1][-]{section.2.1}{Schema Relazionale}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.1.1}{Entit\340}{section.2.1}% 12
-\BOOKMARK [2][-]{subsection.2.1.2}{Associazioni}{section.2.1}% 13
-\BOOKMARK [1][-]{section.2.2}{API}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.1}{Documentazione API}{section.2.2}% 15
-\BOOKMARK [2][-]{subsection.2.2.2}{Risorse}{section.2.2}% 16
-\BOOKMARK [2][-]{subsection.2.2.3}{Endpoints}{section.2.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.4}{GET /notes}{section.2.2}% 18
-\BOOKMARK [2][-]{subsection.2.2.5}{GET /notes/\173id\175}{section.2.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.6}{GET /files/\173id\175}{section.2.2}% 20
-\BOOKMARK [2][-]{subsection.2.2.7}{POST /texts}{section.2.2}% 21
-\BOOKMARK [2][-]{subsection.2.2.8}{GET /texts/\173id\175}{section.2.2}% 22
-\BOOKMARK [2][-]{subsection.2.2.9}{POST /photos}{section.2.2}% 23
-\BOOKMARK [2][-]{subsection.2.2.10}{GET /photos/\173id\175}{section.2.2}% 24
-\BOOKMARK [2][-]{subsection.2.2.11}{POST /audios}{section.2.2}% 25
-\BOOKMARK [2][-]{subsection.2.2.12}{GET /audios/\173id\175}{section.2.2}% 26
-\BOOKMARK [2][-]{subsection.2.2.13}{POST /videos}{section.2.2}% 27
-\BOOKMARK [2][-]{subsection.2.2.14}{GET /videos/\173id\175}{section.2.2}% 28
+\BOOKMARK [0][-]{chapter.1}{Progettazione}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Schema Relazionale}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Entit\340}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Associazioni}{section.1.1}% 4
+\BOOKMARK [1][-]{section.1.2}{API}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.2.1}{Documentazione API}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.2}{Risorse}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.3}{Endpoints}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.4}{GET /notes}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.5}{GET /notes/\173id\175}{section.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.2.6}{GET /files/\173id\175}{section.1.2}% 11
+\BOOKMARK [2][-]{subsection.1.2.7}{POST /texts}{section.1.2}% 12
+\BOOKMARK [2][-]{subsection.1.2.8}{GET /texts/\173id\175}{section.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.2.9}{POST /photos}{section.1.2}% 14
+\BOOKMARK [2][-]{subsection.1.2.10}{GET /photos/\173id\175}{section.1.2}% 15
+\BOOKMARK [2][-]{subsection.1.2.11}{POST /audios}{section.1.2}% 16
+\BOOKMARK [2][-]{subsection.1.2.12}{GET /audios/\173id\175}{section.1.2}% 17
+\BOOKMARK [2][-]{subsection.1.2.13}{POST /videos}{section.1.2}% 18
+\BOOKMARK [2][-]{subsection.1.2.14}{GET /videos/\173id\175}{section.1.2}% 19
+\BOOKMARK [0][-]{chapter.2}{Tecnologie utilizzate}{}% 20
+\BOOKMARK [1][-]{section.2.1}{Laravel}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.1.1}{ORM: Object-Relational Mapping}{section.2.1}% 22
+\BOOKMARK [2][-]{subsection.2.1.2}{Model}{section.2.1}% 23
+\BOOKMARK [2][-]{subsection.2.1.3}{Route}{section.2.1}% 24
+\BOOKMARK [2][-]{subsection.2.1.4}{Controller}{section.2.1}% 25
+\BOOKMARK [2][-]{subsection.2.1.5}{Database}{section.2.1}% 26
+\BOOKMARK [1][-]{section.2.2}{Composer}{chapter.2}% 27
+\BOOKMARK [1][-]{section.2.3}{Artisan}{chapter.2}% 28
 \BOOKMARK [0][-]{chapter.3}{Implementazione}{}% 29
 \BOOKMARK [1][-]{section.3.1}{Struttura dell'applicazione}{chapter.3}% 30
 \BOOKMARK [2][-]{subsection.3.1.1}{App directory}{section.3.1}% 31

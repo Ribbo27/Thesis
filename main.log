@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  15 OCT 2018 21:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.27)  17 OCT 2018 12:05
 entering extended mode
 **./main.tex
 (main.tex
@@ -965,7 +965,7 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 sty"
 File: lstlang2.sty 2018/09/02 1.7 listings language file
 ) (main.aux (TeX_files/introduction.aux) (TeX_files/dediche.aux)
-(TeX_files/framework.aux) (TeX_files/urbanStoriesSharing.aux)
+(TeX_files/urbanStoriesSharing.aux) (TeX_files/framework.aux)
 (TeX_files/implementazione.aux) (TeX_files/conclusioni.aux))
 \openout1 = `main.aux'.
 
@@ -1184,12 +1184,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 ("C:\Users\Ribbo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
 ("C:\Users\Ribbo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
 
 [3])
 \tf@toc=\write6
@@ -1226,29 +1226,20 @@ s been already used, duplicate ignored
                    \relax 
 l.62 	\include{./TeX_files/dediche}
                                     [3]
-\openout2 = `./TeX_files/framework.aux'.
+\openout2 = `./TeX_files/urbanStoriesSharing.aux'.
 
- (TeX_files/framework.texpdfTeX warning (ext4): destination with the same ident
-ifier (name{page.4}) has been already used, duplicate ignored
+ (TeX_files/urbanStoriesSharing.texpdfTeX warning (ext4): destination with the 
+same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Tecnologie utilizzate} [4
+            {Progettazione} [4
 
 
 
 ]
 Capitolo 1.
-[5] [6]
-Underfull \vbox (badness 3657) has occurred while \output is active []
-
- [7])
-[8]
-\openout2 = `./TeX_files/urbanStoriesSharing.aux'.
-
- (TeX_files/urbanStoriesSharing.tex
-Capitolo 2.
-<schemaER.png, id=306, 380.622pt x 446.8695pt>
+<schemaER.png, id=277, 380.622pt x 446.8695pt>
 File: schemaER.png Graphic file (type png)
 <use schemaER.png>
 Package pdftex.def Info: schemaER.png  used on input line 12.
@@ -1259,18 +1250,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9
-
-
-
-]
-[10 <./schemaER.png>] [11] [12]
+ [5]
+[6 <./schemaER.png>] [7] [8]
 Overfull \hbox (7.82744pt too wide) in paragraph at lines 132--134
 \OT1/cmr/m/n/12 Dopo aver de-fi-ni-to la strut-tu-ra del da-ta-ba-se, so-no sta
 -te de-fi-ni-te le API (\OT1/cmr/bx/n/12 Application
  []
 
-[13]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 173--186
 []
  []
@@ -1280,7 +1267,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--206
 []
  []
 
-[14]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 207--221
 []
  []
@@ -1295,7 +1282,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--249
 []
  []
 
-[15]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 250--266
 []
  []
@@ -1303,7 +1290,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--266
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
+ [12]
 Overfull \hbox (94.58626pt too wide) in paragraph at lines 279--287
  [][] 
  []
@@ -1311,7 +1298,7 @@ Overfull \hbox (94.58626pt too wide) in paragraph at lines 279--287
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+ [13]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 301.
 LaTeX Font Info:    Try loading font information for OT1+zi4 on input line 301.
@@ -1328,7 +1315,7 @@ LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
+ [14]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 352.
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
@@ -1337,15 +1324,15 @@ LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20]
+[15] [16]
 Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
-[21]
+[17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
+ [18]
 Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
@@ -1353,12 +1340,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
 Underfull \vbox (badness 4454) has occurred while \output is active []
 
- [23]
-[24]
+ [19]
+[20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
-[26] [27]) [28]
+ [21]
+[22] [23]) [24]
+\openout2 = `./TeX_files/framework.aux'.
+
+ (TeX_files/framework.tex
+Capitolo 2.
+[25
+
+
+
+] [26]
+Underfull \vbox (badness 3657) has occurred while \output is active []
+
+ [27])
+[28]
 \openout2 = `./TeX_files/implementazione.aux'.
 
  (TeX_files/implementazione.tex
@@ -1482,12 +1482,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--119
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
  (main.aux (TeX_files/introduction.aux) (TeX_files/dediche.aux)
-(TeX_files/framework.aux) (TeX_files/urbanStoriesSharing.aux)
+(TeX_files/urbanStoriesSharing.aux) (TeX_files/framework.aux)
 (TeX_files/implementazione.aux) (TeX_files/conclusioni.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 86519FC4C04B3BB3B64C7D40142DC4BF;2786.
+(rerunfilecheck)             Checksum: 8C17819239F0D0F0DADEFDCE99E43409;2786.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
@@ -1511,7 +1511,7 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ribbo/AppData/Local/Programs/MiKTeX
 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ribbo/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Ribbo/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (48 pages, 534625 bytes).
+Output written on main.pdf (48 pages, 534678 bytes).
 PDF statistics:
  1052 PDF objects out of 1200 (max. 8388607)
  492 named destinations out of 1000 (max. 500000)
